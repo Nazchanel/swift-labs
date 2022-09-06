@@ -7,7 +7,8 @@ class ViewController: UIViewController {
     
     
     var lblHorizontal = UILabel()
-//    var lblVertical   = UILabel()
+    
+    var lblBackground = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,15 +19,19 @@ class ViewController: UIViewController {
         screenHeight = Int(screenBounds.height)
         
         
-        
-        
         print("Screen width = \(screenWidth), screen height = \(screenHeight)")
+        
+        
         
         // horizontal label, full screen width
         lblHorizontal.frame = CGRect(x: 20, y: 100, width: screenWidth / 10, height: 50)
         lblHorizontal.backgroundColor = UIColor.yellow
         
         lblHorizontal.text = "0"
+        
+        
+        lblHorizontal.frame = CGRect(x:0, y: 0, width: screenHeight-10, height: screenWidth-10)
+        lblBackground.backgroundColor = UIColor.green
         
         view.addSubview(lblHorizontal)
         

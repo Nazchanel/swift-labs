@@ -29,7 +29,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Choice 1"/>
                                 <connections>
-                                    <action selector="choiceOnePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y38-AD-lvx"/>
+                                    <action selector="choiceOnePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x0f-Wh-g1c"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DwZ-Gt-5uP">
@@ -46,7 +46,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="choiceOne" destination="agu-iV-bzO" id="vnL-Vy-LAM"/>
                         <outlet property="choiceTwo" destination="DwZ-Gt-5uP" id="cgA-SD-IY0"/>
+                        <outlet property="label1" destination="q0S-kA-8ek" id="jvt-nY-CPv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

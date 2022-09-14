@@ -16,15 +16,15 @@ struct Destiny
     Story(title: "second room text", choice1: "third choice", choice1index: 0, choice2: "fourth choice", choice2index: 1),
     Story(title: "final room", choice1: "the", choice1index: -1, choice2: "end", choice2index: -1)  //Story object at index 1
     ]
-    func returnTitle()
+    func returnTitle() -> String
     {
         return stories[currentStory].title
     }
-    func returnChoiceOne()
+    func returnChoiceOne() -> String
     {
         return stories[currentStory].choice1
     }
-    func returnChoiceTwo()
+    func returnChoiceTwo() -> String
     {
         return stories[currentStory].choice2
     }

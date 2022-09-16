@@ -14,15 +14,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var choiceTwo: UIButton!
     
     @IBAction func choiceOnePressed(_ sender: Any) {
-        print(game.currentStory)
-        if game.currentStory == -1{
+        if game.returnChoiceOne() == "The"{
             choiceOne.isHidden = true
+            choiceTwo.isHidden = true
             print("hidden")
         }
         else{
             
         game.currentStory = game.stories[game.currentStory].choice1index
+            
         choiceOne.setTitle(game.returnChoiceOne(), for: .normal)
+        choiceTwo.setTitle(game.returnChoiceTwo(), for: .normal)
+            
         label1.text = game.returnTitle()
             
         }
@@ -30,17 +33,19 @@ class ViewController: UIViewController {
     }
     
     @IBAction func choiceTwoPressed(_ sender: Any) {
-        print(game.currentStory)
-        if game.currentStory == -1
+        if game.returnChoiceTwo() == "End"
         {
             choiceTwo.isHidden = true
+            choiceOne.isHidden = true
             print("hidden")
-            //return
         }
         else
         {
         game.currentStory = game.stories[game.currentStory].choice2index
+        
+        choiceOne.setTitle(game.returnChoiceOne(), for: .normal)
         choiceTwo.setTitle(game.returnChoiceTwo(), for: .normal)
+            
         label1.text = game.returnTitle()
         }   
         

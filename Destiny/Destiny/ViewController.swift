@@ -25,7 +25,7 @@ class ViewController: UIViewController {
             
         choiceOne.setTitle(game.returnChoiceOne(), for: .normal)
         choiceTwo.setTitle(game.returnChoiceTwo(), for: .normal)
-            
+             
         label1.text = game.returnTitle()
             
         }
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        label1.textColor = .red
         label1.text = game.returnTitle()
         
         choiceOne.setTitle(game.returnChoiceOne(), for: .normal)

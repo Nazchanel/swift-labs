@@ -21,7 +21,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agu-iV-bzO">
-                                <rect key="frame" x="11" y="660" width="190" height="100"/>
+                                <rect key="frame" x="11" y="626" width="190" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Choice 1"/>
@@ -30,7 +30,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DwZ-Gt-5uP">
-                                <rect key="frame" x="214" y="660" width="190" height="100"/>
+                                <rect key="frame" x="214" y="626" width="190" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Choice 2"/>
@@ -38,12 +38,12 @@
                                     <action selector="choiceTwoPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d8C-8l-P2Q"/>
                                 </connections>
                             </button>
-                            <label userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You are in a dark and gloomy forest. You see two paths ahead of you..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0S-kA-8ek">
-                                <rect key="frame" x="11" y="82" width="393" height="299"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="default" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ME8-Ej-uTh">
+                                <rect key="frame" x="20" y="169" width="374" height="184"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -52,7 +52,8 @@
                     <connections>
                         <outlet property="choiceOne" destination="agu-iV-bzO" id="vnL-Vy-LAM"/>
                         <outlet property="choiceTwo" destination="DwZ-Gt-5uP" id="cgA-SD-IY0"/>
-                        <outlet property="label1" destination="q0S-kA-8ek" id="jvt-nY-CPv"/>
+                        <outlet property="label1" destination="ME8-Ej-uTh" id="Odh-q4-PO0"/>
+                        <outlet property="setting" destination="2Io-TB-sDf" id="LB3-Gc-x7c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

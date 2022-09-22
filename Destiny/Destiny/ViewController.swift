@@ -13,7 +13,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var choiceOne: UIButton!
     @IBOutlet weak var choiceTwo: UIButton!
     
+    @IBOutlet weak var setting: UIImageView!
+    
     @IBAction func choiceOnePressed(_ sender: Any) {
+        
         if game.returnChoiceOne() == "The"{
             choiceOne.isHidden = true
             choiceTwo.isHidden = true
@@ -53,10 +56,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        label1.textColor = .red
         label1.text = game.returnTitle()
-        
         choiceOne.setTitle(game.returnChoiceOne(), for: .normal)
         choiceTwo.setTitle(game.returnChoiceTwo(), for: .normal)
+        setting.image = UIImage(named: "background.jpg")
     }
 }

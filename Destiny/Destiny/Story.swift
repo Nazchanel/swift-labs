@@ -14,5 +14,5 @@ struct Story
     let choice1index: Int
     let choice2: String
     let choice2index: Int
-    let pictureIndex: Int
+//    let picture: String
 }

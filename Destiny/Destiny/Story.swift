@@ -9,10 +9,10 @@ import Foundation
 
 struct Story
 {
-    let title: String
-    let choice1: String
-    let choice1index: Int
-    let choice2: String
-    let choice2index: Int
+    let title: String // Title
+    let choice1: String // Label 1
+    let choice1index: Int // Index to go to
+    let choice2: String // Label 2
+    let choice2index: Int // Index to go
 //    let picture: String
 }

@@ -11,6 +11,7 @@ struct Destiny
 {
     var currentStory : Int = 0
     
+    // All the paths
     let stories = [ //construct Story objects inside the list
         Story(title: "You are stranded in a forest and see a light.\n\nWhat do you want to do?", choice1: "Walk towards the light", choice1index: 1, choice2: "Walk in the opposite direction", choice2index: 3), // Index 0
         Story(title: "You have reached the source of the light, a cabin. You see four large figures inside chanting.\n\nWhat do you want to do?", choice1: "Knock on the door.", choice1index: 2, choice2: "Run away.", choice2index: 0), // Index 1

@@ -17,18 +17,22 @@ class ViewController: UIViewController {
     
     @IBAction func choiceOnePressed(_ sender: Any) {
         
+        // Hides the button when game ends
         if game.returnChoiceOne() == "The"{
             choiceOne.isHidden = true
             choiceTwo.isHidden = true
             print("hidden")
         }
         else{
+        
             
         game.currentStory = game.stories[game.currentStory].choice1index
-            
+        
+            // Sets label text
         choiceOne.setTitle(game.returnChoiceOne(), for: .normal)
         choiceTwo.setTitle(game.returnChoiceTwo(), for: .normal)
              
+        // set room description
         label1.text = game.returnTitle()
             
         }

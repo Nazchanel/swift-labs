@@ -11,36 +11,42 @@ let responses = ["It is certain.", "It is decidedly so.", "WWithout a doubt.", "
 
 var canShake: Bool = true
 
-var timer = Timer()
+var timer = Timer() // Timer for generation
 
-var timer2 = Timer()
+var timer2 = Timer() // Timer for spacing between each question
 
-var response = " "
+var response = "" // Label text variable, initialized to empty String
 
-var randomIndex: Int = 0
+var randomIndex: Int = 0 // Initializing index for generating random index of list
+
 class ViewController: UIViewController {
+    
     @IBOutlet weak var message: UILabel!
     
     @IBOutlet weak var eightBall: UILabel!
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake && canShake{
-            message.text = "Answer Generating..."
-            
+            message.text = "Answer Generating..." // Message while it is waiting
             timer.invalidate()
+            
+            // 3 second timer to generate
             timer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(timerFunction), userInfo: nil, repeats: true)
             
         }
         
     }
+    
     @objc func timerFunction(_ sender: UIButton!) {
-        print("Timer fired!!")
         timer.invalidate()
+        
+        // 1 second until next question
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFunction2), userInfo: nil, repeats: true)
         
-        
+        // Random index generation
         randomIndex = Int.random(in: 0...responses.count-1)
-
+        
+        // Sets response to a variable and displays it
         response = responses[randomIndex]
         
         message.text = response
@@ -53,13 +59,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Makes square labels resemble a circle
         eightBall.layer.cornerRadius = 190
         eightBall.layer.masksToBounds = true
         
         message.layer.cornerRadius = 125
         message.layer.masksToBounds = true
+        
+        // Starting label text
         message.text = "Think of a question..."
         
+        // Background color
         self.view.backgroundColor = .systemBlue
     }
     

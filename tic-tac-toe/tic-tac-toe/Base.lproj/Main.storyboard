@@ -138,11 +138,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efX-5Y-m3d">
+                                <rect key="frame" x="132" y="640" width="150" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="RESTART"/>
+                                <connections>
+                                    <action selector="restartPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Pav-4Z-2Di"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="restartButton" destination="efX-5Y-m3d" id="mNn-Ag-NVp"/>
                         <outlet property="turnIndicator" destination="7Ny-l3-ySk" id="w3p-xl-MVY"/>
                         <outlet property="turnValidity" destination="hFo-ax-rab" id="lE1-kS-8Sj"/>
                         <outletCollection property="allOutlets" destination="9eb-IO-aA3" collectionClass="NSMutableArray" id="cGG-qe-Jcn"/>

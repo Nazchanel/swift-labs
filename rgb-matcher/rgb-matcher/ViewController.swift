@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     var initialColor = [Float(0.0), Float(0.0), Float(0.0)]
     var RGB  = [Float(0.0), Float(0.0), Float(0.0)]
-    var time : Int = 15
+    var time : Int = 10 // Amount of time on the timer
     
     var win = false
     
@@ -71,7 +71,6 @@ class ViewController: UIViewController {
             
             dialogMessage.addAction(UIAlertAction(title: "Click to restart", style: .default, handler: {_ in self.alertPressed()}))
             
-            // Present Alert to
             self.present(dialogMessage, animated: true, completion: nil)
             
         
@@ -96,13 +95,11 @@ class ViewController: UIViewController {
     {
         displayAlert()
         
-        
-        
     }
     
     func calculateScore() -> Int
     {
-        let diff = sqrt(pow(RGB[0]-initialColor[0], 2) + pow(RGB[1]-initialColor[1], 2) + pow(RGB[2]-initialColor[2], 2))
+        let diff = sqrt(pow(RGB[0]-initialColor[0], 2) + pow(RGB[1]-initialColor[1], 2) + pow(RGB[2]-initialColor[2], 2)) // Algorithim to calculate score
         var score = (1 - diff) * 100
         if score < 0
         {
@@ -114,6 +111,7 @@ class ViewController: UIViewController {
     
     func alertPressed()
     {
+        // Resets everything to original values
         initialColor = [Float(0.0), Float(0.0), Float(0.0)]
         RGB  = [Float(0.0), Float(0.0), Float(0.0)]
         time = 15

@@ -7,29 +7,94 @@
 
 import UIKit
 
-class ViewController: UIViewController {
 
-    @IBOutlet var allKeys: [UIButton]!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        for i in 0...8
+class ViewController: UIViewController {
+    
+    var listOfWords = ["buccaneer", "swift", "glorious", "incandescent", "bug", "program"]
+    
+    var currentGame : Game!
+    let incorrectMovesAllowed = 0
+    
+    var totalWins = 0 {
+        didSet
         {
-            // allOutlets[i].setTitle(String(i), for: .normal)
-            allOutlets[i].setTitle("", for: .normal)
-            allOutlets[i].addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
-            allOutlets[i].tag = i
+            newRound()
         }
-        
-        // X goes first
-        turnIndicator.text = "It is X's turn"
-        
-        restartButton.isHidden = true
-        
-    }
     }
     
+    var totalLosses = 0
+    {
+        didSet {
+            newRound()
+        }
+    }
+    
+    
+    @IBOutlet var allKeys: [UIButton]!
+    
+    @IBOutlet weak var treeImage: UIImageView!
+    
+    @IBOutlet weak var correctWordLabel: UILabel!
+    
+    @IBOutlet weak var scoreLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    
+    @IBAction func letterButtonPressed(_ sender: UIButton) {
+        sender.isEnabled = false
+        let letterString = sender.title(for: .normal)!
+        let letter = Character(letterString.lowercased())
+        currentGame.playerGuessed(letter: letter)
+        updateUI()
+        
+        
+    }
 
-
+    func newRound()
+    {
+        if !listOfWords.isEmpty {
+            let newWord = listOfWords.removeFirst()
+            currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed, guessedLetters: [])
+            // Left off here
+        }
+        let newWord = listOfWords.removeFirst()
+        currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed, guessedLetters: [])
+        updateUI()
+        
+    }
+    func updateUI()
+    {
+        var letters = [String]()
+        
+        for letter in currentGame.formattedWord
+        {
+            letters.append(String(letter))
+        }
+        let wordWithSpacing = letters.joined(separator: " ")
+        
+        correctWordLabel.text = wordWithSpacing
+        
+        scoreLabel.text = "Wins: \(totalWins), Losses: \(totalLosses)"
+        
+        treeImage.image = UIImage(named: "Tree \(currentGame.incorrectMovesRemaining)")
+        
+        
+    }
+    func updateGameState()
+    {
+        if currentGame.incorrectMovesRemaining == 0{
+            totalLosses += 1
+        }
+        else if currentGame.word == currenGame.formattedWord {
+            totalWins += 1
+        }
+        else
+        {
+            updateUI()
+        }
+    }
+    
 }
-

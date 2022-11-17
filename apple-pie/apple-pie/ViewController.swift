@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     var listOfWords = ["buccaneer", "swift", "glorious", "incandescent", "bug", "program"]
     
     var currentGame : Game!
-    let incorrectMovesAllowed = 0
+    let incorrectMovesAllowed = 7
     
     var totalWins = 0 {
         didSet
@@ -45,34 +45,41 @@ class ViewController: UIViewController {
     
     @IBAction func letterButtonPressed(_ sender: UIButton) {
         sender.isEnabled = false
-        let letterString = sender.title(for: .normal)!
-        let letter = Character(letterString.lowercased())
+
+        let letterString = (sender.titleLabel?.text)
+
+        let letter = Character(letterString!.lowercased())
+
         currentGame.playerGuessed(letter: letter)
-        updateUI()
-        
+
+        updateGameState()
+
         
     }
-
+    
     func newRound()
     {
         if !listOfWords.isEmpty {
             let newWord = listOfWords.removeFirst()
             currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed, guessedLetters: [])
-            // Left off here
+            updateUI()
         }
-        let newWord = listOfWords.removeFirst()
-        currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed, guessedLetters: [])
-        updateUI()
+        else
+        {
+            enableLetterButtons(false)
+        }
         
     }
     func updateUI()
     {
         var letters = [String]()
         
-        for letter in currentGame.formattedWord
-        {
+        for letter in currentGame.formattedWord{
+            
             letters.append(String(letter))
+            
         }
+        
         let wordWithSpacing = letters.joined(separator: " ")
         
         correctWordLabel.text = wordWithSpacing
@@ -88,12 +95,18 @@ class ViewController: UIViewController {
         if currentGame.incorrectMovesRemaining == 0{
             totalLosses += 1
         }
-        else if currentGame.word == currenGame.formattedWord {
+        else if currentGame.word == currentGame.formattedWord {
             totalWins += 1
         }
         else
         {
             updateUI()
+        }
+    }
+    func enableLetterButtons(_ enable: Bool)
+    {
+        for button in allKeys {
+            button.isEnabled = enable
         }
     }
     

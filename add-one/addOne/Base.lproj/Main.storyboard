@@ -21,52 +21,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="od9-AS-8OR">
-                                <rect key="frame" x="94.999999999999986" y="367" width="384.66666666666669" height="51"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" image="number" translatesAutoresizingMaskIntoConstraints="NO" id="EjS-ct-P1C">
+                                <rect key="frame" x="40" y="266" width="310" height="122"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E33-sr-F5t" userLabel="Random Number">
+                                <rect key="frame" x="105" y="280" width="180" height="84"/>
+                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="70"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="73" translatesAutoresizingMaskIntoConstraints="NO" id="oqc-8A-nMZ" userLabel="top two">
+                                <rect key="frame" x="40" y="57" width="310" height="51"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="score" translatesAutoresizingMaskIntoConstraints="NO" id="F45-2g-qOc">
-                                        <rect key="frame" x="0.0" y="0.0" width="119" height="51"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="118.66666666666667" height="51"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOa-gT-Y9f">
-                                        <rect key="frame" x="119" y="0.0" width="57" height="51"/>
-                                        <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="22"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVC-jZ-cVP">
-                                        <rect key="frame" x="176" y="0.0" width="59.666666666666657" height="51"/>
-                                        <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="22"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="CXw-zw-Tsf">
-                                        <rect key="frame" x="235.66666666666663" y="0.0" width="149" height="51"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="CXw-zw-Tsf">
+                                        <rect key="frame" x="191.66666666666666" y="0.0" width="118.33333333333334" height="51"/>
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="70" translatesAutoresizingMaskIntoConstraints="NO" id="PNh-86-GYm">
-                                <rect key="frame" x="50" y="568" width="300" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="hHY-Ev-bH0" userLabel="Top two labels">
+                                <rect key="frame" x="50" y="67" width="290" height="26.666666666666671"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVC-jZ-cVP">
+                                        <rect key="frame" x="0.0" y="0.0" width="105" height="26.666666666666668"/>
+                                        <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="22"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOa-gT-Y9f">
+                                        <rect key="frame" x="185" y="0.0" width="105" height="26.666666666666668"/>
+                                        <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="22"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="70" translatesAutoresizingMaskIntoConstraints="NO" id="PNh-86-GYm" userLabel="User Input">
+                                <rect key="frame" x="40" y="473" width="310" height="110"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <rect key="contentStretch" x="0.65000000000000002" y="0.0" width="1" height="1"/>
                                 <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="70"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="number" translatesAutoresizingMaskIntoConstraints="NO" id="EjS-ct-P1C">
-                                <rect key="frame" x="41" y="271" width="309" height="153"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E33-sr-F5t">
-                                <rect key="frame" x="58" y="286" width="292" height="123"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HVDComicSerifPro" family="HVD Comic Serif Pro" pointSize="70"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hHY-Ev-bH0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="1zm-9v-oUU"/>
+                            <constraint firstItem="PNh-86-GYm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="5d0-OM-Sgl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="oqc-8A-nMZ" secondAttribute="trailing" constant="40" id="63m-SD-7EX"/>
+                            <constraint firstItem="EjS-ct-P1C" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="6as-1r-Gg9"/>
+                            <constraint firstItem="E33-sr-F5t" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="105" id="7vi-sU-c1M"/>
+                            <constraint firstItem="oqc-8A-nMZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="9SA-Jr-7no"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PNh-86-GYm" secondAttribute="trailing" constant="40" id="Oc3-vq-xlP"/>
+                            <constraint firstItem="E33-sr-F5t" firstAttribute="top" secondItem="EjS-ct-P1C" secondAttribute="top" constant="14" id="QlK-q4-IAX"/>
+                            <constraint firstItem="EjS-ct-P1C" firstAttribute="top" secondItem="oqc-8A-nMZ" secondAttribute="bottom" constant="158" id="VlL-bu-caj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="E33-sr-F5t" secondAttribute="trailing" constant="105" id="eV6-jJ-J5I"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hHY-Ev-bH0" secondAttribute="trailing" constant="50" id="icq-VB-m6q"/>
+                            <constraint firstItem="oqc-8A-nMZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="kOt-pB-K6R"/>
+                            <constraint firstItem="hHY-Ev-bH0" firstAttribute="top" secondItem="oqc-8A-nMZ" secondAttribute="top" constant="10" id="njS-3V-DAi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EjS-ct-P1C" secondAttribute="trailing" constant="40" id="pZL-MB-gSF"/>
+                            <constraint firstItem="PNh-86-GYm" firstAttribute="top" secondItem="EjS-ct-P1C" secondAttribute="bottom" constant="85" id="rlB-38-cRD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PNh-86-GYm" secondAttribute="bottom" constant="227" id="tAY-Ko-3c8"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="number" destination="E33-sr-F5t" id="Uxf-ck-QbD"/>
+                        <outlet property="scoreLabel" destination="pVC-jZ-cVP" id="meA-uA-dIR"/>
+                        <outlet property="timeLabel" destination="JOa-gT-Y9f" id="WNn-JG-vqn"/>
+                        <outlet property="userInput" destination="PNh-86-GYm" id="Emq-d7-pnO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

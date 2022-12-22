@@ -16,28 +16,38 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var userInput: UITextField!
     
-    var timer = Timer() // Timer for generation
+    // Minutes portion of the time
+    var minutes : Int = 0
     
-    var time : Int = 60
+    // Timer for generation
+    var timer = Timer()
+    
+    // Seconds
+    var time : Int = 10
     
     var score = 0
     
+    var started = false
+    
+    // Current generated number
     var currentNumber : Int = 0
     
     override func viewDidLoad() {
         setNewNumber()
         
-        timeLabel.text = "60"
+        timeLabel.text = "0:10"
         
         scoreLabel.text = String(score)
         
         super.viewDidLoad()
         
+        // Background Image
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background.jpg")!)
         
+        // User Text Field Action
         userInput.addTarget(self, action: #selector(ViewController.userInputChanged(_:)), for: .editingChanged)
         
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFunction), userInfo: nil, repeats: true)
+        
     }
     func generateNumber() -> String {
         let digits = 4
@@ -55,13 +65,22 @@ class ViewController: UIViewController {
         timer.invalidate()
         
         time -= 1
+        if time >= 60
+        {
+            // Sets the minutes value through conversion
+            minutes = time / 60
+            print("Minutes: \(minutes)")
+            time -= minutes*60
+            print("This is the current time \(minutes):\(time)")
+        }
         if time == 0
         {
             displayAlert()
         }
         else{
+            print("This is the current time \(minutes):\(time)")
             
-            timeLabel.text = String(format: "%02d", time)
+            timeLabel.text = "\(minutes):\(String(format: "%02d", time))"
             
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerFunction), userInfo: nil, repeats: true)
         }
@@ -80,12 +99,13 @@ class ViewController: UIViewController {
     {
         // Resets everything to original values
         
-        time = 60
-        
+        time = 10
+        minutes = 0
+        started = false
         setNewNumber()
         
         userInput.text = ""
-        timeLabel.text = String(time)
+        timeLabel.text = "\(String(minutes)):\(String(time))"
         
         scoreLabel.text = "0"
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerFunction), userInfo: nil, repeats: true)
@@ -93,6 +113,8 @@ class ViewController: UIViewController {
     func getAnswer() -> String
     {
         var correctNumber: String = ""
+        
+        // Splits number into arrat of chars
         let splitInputText = Array(number.text!)
         var integerArray = [0, 0, 0, 0]
         
@@ -102,6 +124,12 @@ class ViewController: UIViewController {
             
             integerArray[i] = Int(String(temp))!
             integerArray[i] += 1
+            
+            // Wraps 9s
+            if integerArray[i] == 10
+            {
+                integerArray[i] = 0
+            }
             correctNumber += String(integerArray[i])
         }
         return correctNumber
@@ -110,6 +138,8 @@ class ViewController: UIViewController {
     func checkNumber()
     {
         let currentInputText = userInput.text!
+        
+        print("The answer is \(getAnswer())")
         
         if currentInputText == getAnswer()
         {
@@ -137,6 +167,13 @@ class ViewController: UIViewController {
         }
     }
     @objc func userInputChanged(_ textField: UITextField) {
+        
+        if started == false
+        {
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(timerFunction), userInfo: nil, repeats: true)
+            started = true
+        }
+        
         let currentInput = userInput.text
         
         if currentInput!.count != 4
@@ -151,4 +188,3 @@ class ViewController: UIViewController {
         
     }
 }
-

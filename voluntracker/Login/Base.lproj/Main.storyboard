@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="295" y="15"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Account-->
         <scene sceneID="hQW-QV-vMe">
             <objects>
                 <viewController id="b4x-NG-zrM" sceneMemberID="viewController">
@@ -32,27 +32,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ha Ha, you forgot basic info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcl-rJ-XYB">
-                                <rect key="frame" x="90" y="412" width="211" height="21"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PEU-J0-46y">
+                                <rect key="frame" x="26" y="219" width="339" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xYD-xK-Te0">
+                                <rect key="frame" x="26" y="337" width="339" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c9O-gU-qFI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FVB-cu-y1E"/>
+                    <navigationItem key="navigationItem" title="Create Account" id="FVB-cu-y1E"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMT-d7-PGd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-455" y="764"/>
+            <point key="canvasLocation" x="-495.38461538461536" y="763.50710900473928"/>
+        </scene>
+        <!--Forgot Password-->
+        <scene sceneID="3in-64-yRc">
+            <objects>
+                <viewController id="IZT-nK-Mzd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a0U-ui-68L">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="eJ3-6a-PwN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Forgot Password" id="Kfe-iR-yhl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f7b-QK-RpN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="529" y="754"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Login" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Voluntracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -69,16 +90,16 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Forgot Password?"/>
                                 <connections>
-                                    <action selector="forgotPasswordPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rNy-xF-AKe"/>
+                                    <segue destination="IZT-nK-Mzd" kind="show" identifier="forgotPassword" id="S16-2m-B91"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeZ-gT-44B">
-                                <rect key="frame" x="31" y="495" width="165" height="35"/>
+                                <rect key="frame" x="42" y="495" width="143" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Forgot Username?"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Create Account"/>
                                 <connections>
-                                    <segue destination="b4x-NG-zrM" kind="show" identifier="forgotCred" id="mg2-F8-3Tc"/>
+                                    <segue destination="b4x-NG-zrM" kind="show" identifier="createAccount" id="mg2-F8-3Tc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Geb-Jb-mYn">

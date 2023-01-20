@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4A305F382971CF66005F1FC2 /* Login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Login.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A305F382971CF66005F1FC2 /* Voluntracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Voluntracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A305F3B2971CF66005F1FC2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A305F3D2971CF66005F1FC2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4A305F3F2971CF66005F1FC2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		4A305F392971CF66005F1FC2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4A305F382971CF66005F1FC2 /* Login.app */,
+				4A305F382971CF66005F1FC2 /* Voluntracker.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,9 +70,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4A305F372971CF66005F1FC2 /* Login */ = {
+		4A305F372971CF66005F1FC2 /* Voluntracker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4A305F4C2971CF68005F1FC2 /* Build configuration list for PBXNativeTarget "Login" */;
+			buildConfigurationList = 4A305F4C2971CF68005F1FC2 /* Build configuration list for PBXNativeTarget "Voluntracker" */;
 			buildPhases = (
 				4A305F342971CF66005F1FC2 /* Sources */,
 				4A305F352971CF66005F1FC2 /* Frameworks */,
@@ -82,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = Login;
+			name = Voluntracker;
 			productName = Login;
-			productReference = 4A305F382971CF66005F1FC2 /* Login.app */;
+			productReference = 4A305F382971CF66005F1FC2 /* Voluntracker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +102,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4A305F332971CF66005F1FC2 /* Build configuration list for PBXProject "Login" */;
+			buildConfigurationList = 4A305F332971CF66005F1FC2 /* Build configuration list for PBXProject "Voluntracker" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4A305F372971CF66005F1FC2 /* Login */,
+				4A305F372971CF66005F1FC2 /* Voluntracker */,
 			);
 		};
 /* End PBXProject section */
@@ -339,7 +339,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4A305F332971CF66005F1FC2 /* Build configuration list for PBXProject "Login" */ = {
+		4A305F332971CF66005F1FC2 /* Build configuration list for PBXProject "Voluntracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A305F4A2971CF68005F1FC2 /* Debug */,
@@ -348,7 +348,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4A305F4C2971CF68005F1FC2 /* Build configuration list for PBXNativeTarget "Login" */ = {
+		4A305F4C2971CF68005F1FC2 /* Build configuration list for PBXNativeTarget "Voluntracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4A305F4D2971CF68005F1FC2 /* Debug */,

@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     
     var users: [String: String] = [:]
     
+    var loggedInUser : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +32,12 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        //        guard let sender = sender as? UIButton else {return}
-        //
-        //        if sender == forgotPassword
-        //        {
-        //            segue.destination.navigationItem.title = "Forgot Password"
-        //
-        //        }
+//        guard let sender = sender as? UIButton else {return}
+        if segue.identifier == "loginToLanding"
+        {
+            let landingVC = segue.destination as! landingVC
+            landingVC.welcomeMessage = "Hello \(loggedInUser)"
+        }
         //        else if sender == forgotUsername
         //        {
         //            segue.destination.navigationItem.title = "Forgot Username"
@@ -49,46 +49,44 @@ class ViewController: UIViewController {
         //        }
         //
     }
-    func setUserDict()
-    {
-        let storedUsers = defaults.object(forKey: "Users") as? [String:String] ?? [:]
-        
-        users = storedUsers
-    }
     @IBAction func loginPressed(_ sender: UIButton) {
-        setUserDict()
+        users = defaults.object(forKey: "Users") as? [String:String] ?? [:]
         
+        // Entered credentials
         let username = usernameEntry.text!
         let password = passwordEntry.text!
+        
+        var foundUser : Bool = false
         
         print("The Username entered is \(username)\n")
         print("The Password entered is \(password)\n")
         
-        if users == [:]
+        
+        for(user,pwd) in users
         {
-            invalidAlert()
+            if user == username && pwd == password
+            {
+                print("Found a user!")
+                loggedInUser = user
+                foundUser = true
+            }
+        }
+        if foundUser
+        {
+            usernameEntry.text = ""
+            passwordEntry.text = ""
+            
+            performSegue(withIdentifier: "loginToLanding", sender:loginButton)
+            
         }
         else
         {
-            let hello = users[username]
+            usernameEntry.text = ""
+            passwordEntry.text = ""
             
-            if hello == nil
-            {
-                invalidAlert()
-            }
-            else{
-                let password_ = hello!
-                if password_ == password
-                {
-                    print("Correct Login")
-                }
-                else
-                {
-                    invalidAlert()
-                }
-            }
-            
+            invalidAlert()
         }
+        
         
     }
     
@@ -99,7 +97,7 @@ class ViewController: UIViewController {
     {
         let dialogMessage = UIAlertController(title: "Invalid Username or Password", message: "Please try again", preferredStyle: .alert)
         
-        dialogMessage.addAction(UIAlertAction(title: "Ok", style: .default, handler: {_ in self.invalidPressed()}))
+        dialogMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: {_ in self.invalidPressed()}))
         
         self.present(dialogMessage, animated: true, completion: nil)
         

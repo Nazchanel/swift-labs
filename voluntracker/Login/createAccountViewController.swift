@@ -46,6 +46,9 @@ class createAccountViewController: UIViewController {
         }
         print("-----------------------------------------------")
         
+        username.text = ""
+        password.text = ""
+        
     }
     @IBAction func usernameEntered(_ sender: Any) {
         

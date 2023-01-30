@@ -26,28 +26,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         defaults.set(users, forKey: "Users")
+        defaults.set([:], forKey: "Current Hours")
+        defaults.set([:], forKey: "Goal Hours")
         // Do any additional setup after loading the view.
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-//        guard let sender = sender as? UIButton else {return}
         if segue.identifier == "loginToLanding"
         {
             let landingVC = segue.destination as! landingVC
-            landingVC.welcomeMessage = "Hello \(loggedInUser)"
+            landingVC.username = loggedInUser
+            
         }
-        //        else if sender == forgotUsername
-        //        {
-        //            segue.destination.navigationItem.title = "Forgot Username"
-        //        }
-        //        else
-        //        {
-        //            segue.destination.navigationItem.title = "Welcome, \(usernameEntry.text)"
-        //
-        //        }
-        //
+        
     }
     @IBAction func loginPressed(_ sender: UIButton) {
         users = defaults.object(forKey: "Users") as? [String:String] ?? [:]

@@ -25,10 +25,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        defaults.set(users, forKey: "Users")
-        defaults.set([:], forKey: "Current Hours")
-        defaults.set([:], forKey: "Goal Hours")
-        // Do any additional setup after loading the view.
+
     }
     
     
@@ -51,15 +48,12 @@ class ViewController: UIViewController {
         
         var foundUser : Bool = false
         
-        print("The Username entered is \(username)\n")
-        print("The Password entered is \(password)\n")
         
         
         for(user,pwd) in users
         {
             if user == username && pwd == password
             {
-                print("Found a user!")
                 loggedInUser = user
                 foundUser = true
             }

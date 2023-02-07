@@ -19,11 +19,12 @@ class createAccountViewController: UIViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         password.isHidden = true
         confirmation.isHidden = true
         passwordLabel.isHidden = true
         
-        super.viewDidLoad()
         
     }
     
@@ -37,14 +38,14 @@ class createAccountViewController: UIViewController {
         defaults.set(users, forKey: "Users")
         
         
-        print("-----------------------------------------------")
-        
-        for(user,pwd) in users
-        {
-            print("Username: \(user)\nPassword: \(pwd)\n")
-            
-        }
-        print("-----------------------------------------------")
+//        print("-----------------------------------------------")
+//
+//        for(user,pwd) in users
+//        {
+//            print("Username: \(user)\nPassword: \(pwd)\n")
+//
+//        }
+//        print("-----------------------------------------------")
         
         username.text = ""
         password.text = ""

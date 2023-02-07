@@ -26,28 +26,46 @@ class landingVC: UIViewController {
     
     @IBOutlet weak var hoursEntry: UITextField!
     
-    
     var username : String = ""
+    
+    var userExists : Bool = false
     
     var currentHoursStorage: [String: Double] = defaults.object(forKey: "Current Hours") as? [String:Double] ?? [:]
     var goalHoursStorage: [String: Double] = defaults.object(forKey: "Goal Hours") as? [String:Double] ?? [:]
     
     override func viewDidLoad() {
-        for(user,pwd) in currentHoursStorage
+        super.viewDidLoad()
+                
+        for(user,pwd) in goalHoursStorage
         {
-            if user == username
+            print("\nUsername?: \(user)\nGoal Hours?: \(pwd)\n")
+            
+            if username == user{
+                goalHours = pwd
+                userExists = true
+            }
+            else
             {
-                loadingUser()
+                userExists = false
+            }
+        }
+        for(user,pwd) in currentHoursStorage
+            
+        {
+            print("\nUsername?: \(user)\nCurrent Hours?: \(pwd)\n")
+            
+            if username == user
+            {
+                currentHours = pwd
+                userExists = true
+            }
+            else
+            {
+                userExists = false
             }
         }
         
-        print("\n")
-        
-        for(user,pwd) in goalHoursStorage
-        {
-            print("Username?: \(user)\nGoal Hours?: \(pwd)\n")
-        }
-        
+       
         welcomeLabel.text! = "Hello \(username)"
         
         progressLabel.text! = "\(username)'s progress"
@@ -64,11 +82,15 @@ class landingVC: UIViewController {
         removeHour.isHidden = true
         congratulationsMessage.isHidden = true
         
-        super.viewDidLoad()
+        if userExists
+        {
+            loadingUser()
+        }
+        
+
         
     }
     @IBAction func incrementHour(_ sender: Any) {
-        print("\nCurrent Hours: \(currentHours)\nGoalHours: \(goalHours)\n")
         if currentHours + 1 == goalHours
         {
             currentHours += 1
@@ -142,6 +164,19 @@ class landingVC: UIViewController {
     }
     func loadingUser()
     {
+        print("\nThis user an existing user\n")
         
+
+                
+        welcomeLabel.isHidden = true
+        helpMessage.isHidden = true
+        hoursEntry.isHidden = true
+        
+        currentHoursLabel.isHidden = false
+        progressLabel.isHidden = false
+        hourAddButton.isHidden = false
+        removeHour.isHidden = false
+        
+        currentHoursLabel.text = "\(currentHours) out of \(goalHours)"
     }
 }

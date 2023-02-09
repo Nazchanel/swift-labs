@@ -26,37 +26,30 @@ class landingVC: UIViewController {
     
     @IBOutlet weak var hoursEntry: UITextField!
     
+    // Setting user defaults contents to a local variable
+    var currentHoursStorage: [String: Double] = defaults.object(forKey: "Current Hours") as? [String:Double] ?? [:]
+    var goalHoursStorage: [String: Double] = defaults.object(forKey: "Goal Hours") as? [String:Double] ?? [:]
+    
     var username : String = ""
     
     var userExists : Bool = false
     
-    var currentHoursStorage: [String: Double] = defaults.object(forKey: "Current Hours") as? [String:Double] ?? [:]
-    var goalHoursStorage: [String: Double] = defaults.object(forKey: "Goal Hours") as? [String:Double] ?? [:]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        for(user,pwd) in goalHoursStorage
+        
+        // Initializes the values to original
+        currentHours = 0
+        goalHours = 0
+        
+        currentHoursLabel.text = "\(currentHours) out of \(goalHours)"
+        
+        assignbackground()
+        
+        // Sets values of goal hours to stored value if a user is there
+        for(user,gh) in goalHoursStorage
         {
-            print("\nUsername?: \(user)\nGoal Hours?: \(pwd)\n")
-            
             if username == user{
-                goalHours = pwd
-                userExists = true
-            }
-            else
-            {
-                userExists = false
-            }
-        }
-        for(user,pwd) in currentHoursStorage
-            
-        {
-            print("\nUsername?: \(user)\nCurrent Hours?: \(pwd)\n")
-            
-            if username == user
-            {
-                currentHours = pwd
+                goalHours = gh
                 userExists = true
             }
             else
@@ -65,7 +58,22 @@ class landingVC: UIViewController {
             }
         }
         
-       
+        // Sets values of current hours to stored value if a user is there
+        for(user,ch) in currentHoursStorage
+            
+        {
+            if username == user
+            {
+                currentHours = ch
+                userExists = true
+            }
+            else
+            {
+                userExists = false
+            }
+        }
+        
+        // Initializes all the values to their initial values
         welcomeLabel.text! = "Hello \(username)"
         
         progressLabel.text! = "\(username)'s progress"
@@ -82,12 +90,14 @@ class landingVC: UIViewController {
         removeHour.isHidden = true
         congratulationsMessage.isHidden = true
         
+        // Loads user if user exists
         if userExists
         {
             loadingUser()
         }
         
-
+        
+        
         
     }
     @IBAction func incrementHour(_ sender: Any) {
@@ -110,8 +120,6 @@ class landingVC: UIViewController {
             
             currentHoursLabel.text = "\(currentHours) out of \(goalHours)"
         }
-        
-        
         
     }
     
@@ -164,10 +172,7 @@ class landingVC: UIViewController {
     }
     func loadingUser()
     {
-        print("\nThis user an existing user\n")
-        
-
-                
+        // Initialization
         welcomeLabel.isHidden = true
         helpMessage.isHidden = true
         hoursEntry.isHidden = true
@@ -179,4 +184,19 @@ class landingVC: UIViewController {
         
         currentHoursLabel.text = "\(currentHours) out of \(goalHours)"
     }
+    func assignbackground(){
+        let background = UIImage(named: "login-background.jpg")
+        
+        // Settings to make the background image display nicely
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIView.ContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
+    }
+    
+    
 }

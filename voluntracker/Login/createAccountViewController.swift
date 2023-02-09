@@ -25,7 +25,7 @@ class createAccountViewController: UIViewController {
         confirmation.isHidden = true
         passwordLabel.isHidden = true
         
-        
+        assignbackground()
     }
     
     @IBAction func passwordEntered(_ sender: Any) {
@@ -37,15 +37,6 @@ class createAccountViewController: UIViewController {
         
         defaults.set(users, forKey: "Users")
         
-        
-//        print("-----------------------------------------------")
-//
-//        for(user,pwd) in users
-//        {
-//            print("Username: \(user)\nPassword: \(pwd)\n")
-//
-//        }
-//        print("-----------------------------------------------")
         
         username.text = ""
         password.text = ""
@@ -62,4 +53,15 @@ class createAccountViewController: UIViewController {
         
         
     }
-}
+    func assignbackground(){
+        let background = UIImage(named: "account-background.jpg")
+        
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIView.ContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
+    }}

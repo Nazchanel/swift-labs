@@ -9,8 +9,20 @@ import UIKit
 
 struct Trivia
 {
+    var q : String
+    var correct : String
+    var incorrect  : [String]
     
-    let triviaQuestions : [String : [Trivia]] = [
+    init(q:String,correct:String,incorrect:[String])
+    {
+        self.q = q
+        self.correct = correct
+        self.incorrect = incorrect
+    }
+    
+    
+    // Access by Trivia.triviaquestions
+    static let triviaQuestions : [String : [Trivia]] = [
         "General Knowledge" :
             [
                 Trivia(q: "According to the BBPA, what is the most common pub name in the UK?", correct: "Red Lion", incorrect: ["Royal Oak", "White Hart", "King\'s Head"]),
@@ -931,8 +943,6 @@ struct Trivia
     ]
     
     
-    var q : String
-    var correct : String
-    var incorrect  : [String]
+    
 }
 

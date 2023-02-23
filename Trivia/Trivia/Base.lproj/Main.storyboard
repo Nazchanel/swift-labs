@@ -30,11 +30,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w8U-ys-FxY">
-                                <rect key="frame" x="0.0" y="223" width="390" height="162"/>
+                                <rect key="frame" x="-1" y="223" width="390" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RQt-ht-EQL">
-                                <rect key="frame" x="0.0" y="463" width="390" height="162"/>
+                                <rect key="frame" x="-1" y="463" width="390" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How many questions?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bu4-oD-fdM">
@@ -53,7 +53,11 @@
                             <constraint firstItem="9DS-lq-xOQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="45" id="hMA-VZ-HAb"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Setup" landscapeImage="wrench.adjustable.fill" catalog="system" selectedImage="wrench.adjustable.fill" id="CsA-uT-rDq"/>
+                    <tabBarItem key="tabBarItem" title="Setup" image="wrench.adjustable.fill" catalog="system" springLoaded="YES" id="CsA-uT-rDq"/>
+                    <connections>
+                        <outlet property="categoryPicker" destination="w8U-ys-FxY" id="1th-Ks-ftp"/>
+                        <outlet property="questionNumberPicker" destination="RQt-ht-EQL" id="t2R-NX-n5e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -65,6 +69,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="MY8-2h-Kw5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0Nb-2z-2ZS">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -77,24 +82,25 @@
             </objects>
             <point key="canvasLocation" x="90.769230769230759" y="-34.123222748815166"/>
         </scene>
-        <!--Item-->
+        <!--Play-->
         <scene sceneID="qc5-sz-GlZ">
             <objects>
-                <viewController id="wFW-3f-j4C" sceneMemberID="viewController">
+                <viewController id="wFW-3f-j4C" customClass="playPage" customModule="Trivia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MxG-9e-wYR">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="tWO-CO-vqS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="jei-zd-72G"/>
+                    <tabBarItem key="tabBarItem" title="Play" image="play.fill" catalog="system" springLoaded="YES" id="jei-zd-72G"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0lT-zm-r4v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="680"/>
+            <point key="canvasLocation" x="588" y="614"/>
         </scene>
     </scenes>
     <resources>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
         <image name="wrench.adjustable.fill" catalog="system" width="128" height="124"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -44,7 +44,6 @@
 		4A894E1529A53A36003FE6D1 = {
 			isa = PBXGroup;
 			children = (
-				4AD1E3FB29A7DD69001B589D /* playPage.swift */,
 				4A894E2029A53A36003FE6D1 /* Trivia */,
 				4A894E1F29A53A36003FE6D1 /* Products */,
 			);
@@ -61,6 +60,7 @@
 		4A894E2029A53A36003FE6D1 /* Trivia */ = {
 			isa = PBXGroup;
 			children = (
+				4AD1E3FB29A7DD69001B589D /* playPage.swift */,
 				4A894E2129A53A36003FE6D1 /* AppDelegate.swift */,
 				4A894E2329A53A36003FE6D1 /* SceneDelegate.swift */,
 				4A894E2529A53A36003FE6D1 /* ViewController.swift */,

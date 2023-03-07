@@ -8,8 +8,20 @@
 import UIKit
 
 class playPage: UIViewController {
-    var questionNumberSelected : Int = 0
+    var questionNumberSelected : Double = 0
+    
+    var correctAnswerAmount : Double = 0
+    
+    var currentQuestionNumber : Double = 0
+    
+    // (correct question variable)
+    
     var categorySelected : String = ""
+    
+    let triviaQuestions : [String : [Trivia]] = Trivia.triviaQuestions
+        
+    var listOfQuestions = [Trivia(q: "", correct: "", incorrect: [""])]
+    @IBOutlet weak var progressBar: UIProgressView!
     
     var currentQuestion : Trivia = Trivia(q: "", correct: "", incorrect: [""])
     
@@ -19,47 +31,40 @@ class playPage: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        listOfQuestions = triviaQuestions[categorySelected]!
+
+        progressBar.progress = 0
+        
         for i in 0...3
         {
             answerChoices[i].addTarget(self, action: #selector(answerChoicePressed(_:)), for: .touchUpInside)
             answerChoices[i].backgroundColor = .blue
         }
         
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        print()
-//        print("Question Number Selected: \(questionNumberSelected)")
-//        print("Category Selected: \(categorySelected)")
-//        print()
         
+        listOfQuestions = triviaQuestions[categorySelected]!
+                
         currentQuestion = getQuestion()
+        
+        progressBar.progress = 0
         
         setup()
         
-        
-        
     }
-
+    
     func getQuestion() -> Trivia
     {
-        
-        for (type,question ) in Trivia.triviaQuestions {
-            if type == categorySelected
-            {
-                for i in question {
-                    if i.q != currentQuestion.q
-                    {
-                        return i
-                    }
-                    
-                }
-            }
+        for i in listOfQuestions
+        {
+            listOfQuestions.removeFirst()
+            return i
         }
-        return Trivia(q: "", correct: "", incorrect: [""])
-        
+    return Trivia(q: "", correct: "", incorrect: [""])
     }
+        
     func setup()
     {
         var listofchoices : [String] = []
@@ -86,26 +91,41 @@ class playPage: UIViewController {
         
         if answerPicked == currentQuestion.correct
         {
-            print("correct")
+            correctAnswerAmount += 1
             
-            UIView.animate(withDuration: 0.3, animations: {
-                sender.backgroundColor = .green
-            }, completion: { (complete: Bool) in
-//                sender.backgroundColor = .blue
-                return
-            })
-
+            currentQuestionNumber += 1
+            
+            nextQuestion()
+            
+            
         }
         else
         {
-            UIView.animate(withDuration: 0.3, animations: {
-                sender.backgroundColor = .red
-            }, completion: { (complete: Bool) in
-//                sender.backgroundColor = .blue
-                return
-            })
+            
+            currentQuestionNumber += 1
+            
+            nextQuestion()
+            
         }
         
     }
-    
+    func nextQuestion(){
+        if (currentQuestionNumber / questionNumberSelected) >= 1
+        {
+            endGame()
+        }
+        progressBar.progress = Float(currentQuestionNumber / questionNumberSelected)
+        
+        currentQuestion = getQuestion()
+        
+        setup()
+        
+        
+    }
+    func endGame()
+    {
+        print("Gamer Over!")
+        progressBar.progress = 0.0
+        currentQuestionNumber = 0
+    }
 }

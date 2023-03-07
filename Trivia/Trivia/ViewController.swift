@@ -16,7 +16,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var questionNumbersData: [String] = [String]()
     
     var amountOfQuestions : Int = 0
-    var questionNumberSelected : Int = 0
+    var questionNumberSelected : Double = 0
     
     var categorySelected : String = ""
     override func viewDidLoad() {
@@ -91,17 +91,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
            
            if pickerView == questionNumberPicker
            {
-               print("question number picked")
-               questionNumberSelected = Int(questionNumbersData[row])!
+               questionNumberSelected = Double(questionNumbersData[row])!
                
                let secondTab = (self.tabBarController?.viewControllers![1] as! playPage)
                secondTab.questionNumberSelected = questionNumberSelected
                
            }
            else
-           {
-               print("category selected")
-               
+           {               
                categorySelected = categoryData[row]
                
                let secondTab = (self.tabBarController?.viewControllers![1] as! playPage)

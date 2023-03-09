@@ -14,6 +14,7 @@
 		4A894E2B29A53A38003FE6D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A894E2A29A53A38003FE6D1 /* Assets.xcassets */; };
 		4A894E2E29A53A38003FE6D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A894E2C29A53A38003FE6D1 /* LaunchScreen.storyboard */; };
 		4A894E3629A53BEA003FE6D1 /* Trivia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A894E3529A53BEA003FE6D1 /* Trivia.swift */; };
+		4AAFA3BD29BA4AAE00899EFC /* gameOverPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AAFA3BC29BA4AAE00899EFC /* gameOverPage.swift */; };
 		4AD1E3FC29A7DD69001B589D /* playPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD1E3FB29A7DD69001B589D /* playPage.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		4A894E2D29A53A38003FE6D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A894E2F29A53A38003FE6D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A894E3529A53BEA003FE6D1 /* Trivia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trivia.swift; sourceTree = "<group>"; };
+		4AAFA3BC29BA4AAE00899EFC /* gameOverPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameOverPage.swift; sourceTree = "<group>"; };
 		4AD1E3FB29A7DD69001B589D /* playPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,6 +71,7 @@
 				4A894E2A29A53A38003FE6D1 /* Assets.xcassets */,
 				4A894E2C29A53A38003FE6D1 /* LaunchScreen.storyboard */,
 				4A894E2F29A53A38003FE6D1 /* Info.plist */,
+				4AAFA3BC29BA4AAE00899EFC /* gameOverPage.swift */,
 			);
 			path = Trivia;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				4A894E2629A53A36003FE6D1 /* ViewController.swift in Sources */,
 				4A894E2229A53A36003FE6D1 /* AppDelegate.swift in Sources */,
 				4A894E3629A53BEA003FE6D1 /* Trivia.swift in Sources */,
+				4AAFA3BD29BA4AAE00899EFC /* gameOverPage.swift in Sources */,
 				4A894E2429A53A36003FE6D1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

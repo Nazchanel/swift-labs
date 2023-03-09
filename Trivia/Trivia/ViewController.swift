@@ -12,6 +12,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var questionNumberPicker: UIPickerView!
     @IBOutlet weak var categoryPicker: UIPickerView!
     
+    var questionNumberIsSelected : Bool = false
+    var categoryIsSelected : Bool = false
+    
+    
     var categoryData: [String] = [String]()
     var questionNumbersData: [String] = [String]()
     
@@ -19,8 +23,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var questionNumberSelected : Double = 0
     
     var categorySelected : String = ""
+    override func viewDidAppear(_ animated: Bool) {
+        assignbackground()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        assignbackground()
+        
+        disableTabBar()
+        
         
         for (type,question ) in Trivia.triviaQuestions {
             categoryData.append(type)
@@ -45,15 +57,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         // Input the data into the array
         
-        
-        
-
-        
-        
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func unwindToSetup(_ unwindSegue: UIStoryboardSegue) {
+        _ = unwindSegue.source
+        // Use data from the view controller which initiated the unwind segue
     }
     // Number of columns of data
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -74,7 +86,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
     }
     
-    // The data to return fopr the row and component (column) that's being passed in
+    // The data to return for the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == questionNumberPicker
         {
@@ -87,24 +99,74 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
-       {
-           
-           if pickerView == questionNumberPicker
-           {
-               questionNumberSelected = Double(questionNumbersData[row])!
-               
-               let secondTab = (self.tabBarController?.viewControllers![1] as! playPage)
-               secondTab.questionNumberSelected = questionNumberSelected
-               
-           }
-           else
-           {               
-               categorySelected = categoryData[row]
-               
-               let secondTab = (self.tabBarController?.viewControllers![1] as! playPage)
-               secondTab.categorySelected = categorySelected
-           }
+    {
+        
+        if pickerView == questionNumberPicker
+        {
+            questionNumberSelected = Double(questionNumbersData[row])!
+            
+            let secondTab = (self.tabBarController?.viewControllers![1] as! playPage)
+            secondTab.questionNumberSelected = questionNumberSelected
+            
+            questionNumberIsSelected = true
+            
+            if questionNumberIsSelected && categoryIsSelected
+            {
+                enableTabBar()
+            }
+            
         }
+        else
+        {
+            categorySelected = categoryData[row]
+            
+            let secondTab = (self.tabBarController?.viewControllers![1] as! playPage)
+            secondTab.categorySelected = categorySelected
+            
+            categoryIsSelected = true
+            
+            if questionNumberIsSelected && categoryIsSelected
+            {
+                enableTabBar()
+            }
+            
+        }
+    }
+    func disableTabBar()
+    {
+        if let items = tabBarController?.tabBar.items as? [UITabBarItem] {
+            if items.count > 0 {
+                let itemToDisable = items[items.count - 1]
+                itemToDisable.isEnabled = false
+            }
+        }
+        
+    }
+    func enableTabBar()
+    {
+        if let items = tabBarController?.tabBar.items as? [UITabBarItem] {
+            if items.count > 0 {
+                let itemToDisable = items[items.count - 1]
+                itemToDisable.isEnabled = true
+            }
+        }
+    }
+    func assignbackground()
+    {
+        let background = UIImage(named: "mountain.jpg")
+        
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIView.ContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
+    }
     
 }
+
+
+
 

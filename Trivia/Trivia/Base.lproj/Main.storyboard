@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Trivia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trivia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9DS-lq-xOQ">
@@ -54,6 +54,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Setup" image="wrench.adjustable.fill" catalog="system" springLoaded="YES" id="CsA-uT-rDq"/>
+                    <navigationItem key="navigationItem" id="gYT-yf-jPH"/>
                     <connections>
                         <outlet property="categoryPicker" destination="w8U-ys-FxY" id="1th-Ks-ftp"/>
                         <outlet property="questionNumberPicker" destination="RQt-ht-EQL" id="t2R-NX-n5e"/>
@@ -61,7 +62,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1020" y="-34.123222748815166"/>
+            <point key="canvasLocation" x="-758" y="-154"/>
+        </scene>
+        <!--Game Over Page-->
+        <scene sceneID="dcA-Vz-JCe">
+            <objects>
+                <viewController id="ec5-lp-9Az" customClass="gameOverPage" customModule="Trivia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jjj-W8-2Mu">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="787"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game Over!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yw-hU-WtZ">
+                                <rect key="frame" x="88" y="73" width="215" height="114"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhg-8q-iUi">
+                                <rect key="frame" x="101" y="368" width="189" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Try again"/>
+                                <connections>
+                                    <segue destination="lYd-BN-nKf" kind="unwind" unwindAction="unwindToSetup:" id="4h9-bC-yVd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You got x out x" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFj-Ij-zpS">
+                                <rect key="frame" x="16" y="146" width="358" height="151"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="23"/>
+                                <color key="textColor" red="0.98186905690000004" green="0.98640179269999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="R70-jL-yee"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1ET-zn-nT0"/>
+                    <connections>
+                        <outlet property="scoreLabel" destination="kFj-Ij-zpS" id="0Uw-HQ-tzf"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="homeScreen" id="3zT-zz-hUw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V4Y-Q8-Jxq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="lYd-BN-nKf" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-758" y="599"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cpg-ja-okg">
@@ -79,8 +126,15 @@
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="woL-LK-jmq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eY7-xR-BcY">
+                    <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </objects>
-            <point key="canvasLocation" x="90.769230769230759" y="-34.123222748815166"/>
+            <point key="canvasLocation" x="-2072" y="-154"/>
         </scene>
         <!--Play-->
         <scene sceneID="qc5-sz-GlZ">
@@ -137,13 +191,17 @@
                         <outletCollection property="answerChoices" destination="IXV-H1-m9d" collectionClass="NSMutableArray" id="7z8-ly-iVT"/>
                         <outletCollection property="answerChoices" destination="DwQ-0M-IyW" collectionClass="NSMutableArray" id="fjE-Jy-Pit"/>
                         <outletCollection property="answerChoices" destination="1qV-zp-RYf" collectionClass="NSMutableArray" id="BOQ-vA-GIB"/>
+                        <segue destination="ec5-lp-9Az" kind="show" identifier="winScreen" id="q4M-0L-1S0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0lT-zm-r4v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="590.76923076923072" y="693.83886255924165"/>
+            <point key="canvasLocation" x="-2072" y="633"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="3zT-zz-hUw"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="play.fill" catalog="system" width="117" height="128"/>
         <image name="wrench.adjustable.fill" catalog="system" width="128" height="124"/>

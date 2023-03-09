@@ -19,8 +19,9 @@ class playPage: UIViewController {
     var categorySelected : String = ""
     
     let triviaQuestions : [String : [Trivia]] = Trivia.triviaQuestions
-        
+    
     var listOfQuestions = [Trivia(q: "", correct: "", incorrect: [""])]
+    
     @IBOutlet weak var progressBar: UIProgressView!
     
     var currentQuestion : Trivia = Trivia(q: "", correct: "", incorrect: [""])
@@ -31,8 +32,10 @@ class playPage: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        assignbackground()
+        
         listOfQuestions = triviaQuestions[categorySelected]!
-
+        
         progressBar.progress = 0
         
         for i in 0...3
@@ -43,16 +46,26 @@ class playPage: UIViewController {
         
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         
         listOfQuestions = triviaQuestions[categorySelected]!
-                
+        
         currentQuestion = getQuestion()
         
         progressBar.progress = 0
         
         setup()
         
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "winScreen"
+        {
+            let destinationVC = segue.destination as? gameOverPage
+            destinationVC?.score = correctAnswerAmount
+            destinationVC?.totalQuestions = questionNumberSelected
+            
+        }
     }
     
     func getQuestion() -> Trivia
@@ -62,15 +75,15 @@ class playPage: UIViewController {
             listOfQuestions.removeFirst()
             return i
         }
-    return Trivia(q: "", correct: "", incorrect: [""])
+        return Trivia(q: "", correct: "", incorrect: [""])
     }
-        
+    
     func setup()
     {
         var listofchoices : [String] = []
         listofchoices += currentQuestion.incorrect
         listofchoices.append(currentQuestion.correct)
-
+        
         var j : Int = 0
         
         listofchoices.shuffle()
@@ -81,7 +94,7 @@ class playPage: UIViewController {
             i.setTitle(listofchoices[j] , for: .normal)
             
             j += 1
-
+            
         }
         questionLabel.text = currentQuestion.q
     }
@@ -127,5 +140,20 @@ class playPage: UIViewController {
         print("Gamer Over!")
         progressBar.progress = 0.0
         currentQuestionNumber = 0
+        
+        performSegue(withIdentifier: "winScreen", sender: nil)
+    }
+    func assignbackground()
+    {
+        let background = UIImage(named: "walkway.jpg")
+        
+        var imageView : UIImageView!
+        imageView = UIImageView(frame: view.bounds)
+        imageView.contentMode =  UIView.ContentMode.scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = background
+        imageView.center = view.center
+        view.addSubview(imageView)
+        self.view.sendSubviewToBack(imageView)
     }
 }

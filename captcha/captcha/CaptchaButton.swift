@@ -2,15 +2,15 @@
 //  File.swift
 //  captcha
 //
-//  Created by Iyer, Eshan R on 3/20/23.
+//  Created by Iyer, Eshan R on 3/22/23.
 //
 
 import UIKit
 
 @IBDesignable
-class CaptchaImageView : UIImageView
+
+class CaptchaButton : UIImageView
 {
-    var imageName : String = ""
     func shake() {
             let animation = CABasicAnimation(keyPath: "position")
             
@@ -22,5 +22,4 @@ class CaptchaImageView : UIImageView
             
             self.layer.add(animation, forKey: "position")
         }
-    
 }

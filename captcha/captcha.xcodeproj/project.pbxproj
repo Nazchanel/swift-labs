@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A0A1ADD29CB619600DBAA7B /* CaptchaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A0A1ADC29CB619600DBAA7B /* CaptchaButton.swift */; };
 		4AD83EE929C8BFC2009E29FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD83EE829C8BFC2009E29FE /* AppDelegate.swift */; };
 		4AD83EEB29C8BFC2009E29FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD83EEA29C8BFC2009E29FE /* SceneDelegate.swift */; };
 		4AD83EED29C8BFC2009E29FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD83EEC29C8BFC2009E29FE /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A0A1ADC29CB619600DBAA7B /* CaptchaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptchaButton.swift; sourceTree = "<group>"; };
 		4AD83EE529C8BFC2009E29FE /* captcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = captcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AD83EE829C8BFC2009E29FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AD83EEA29C8BFC2009E29FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				4AD83EF129C8BFC4009E29FE /* Assets.xcassets */,
 				4AD83EF329C8BFC4009E29FE /* LaunchScreen.storyboard */,
 				4AD83EF629C8BFC4009E29FE /* Info.plist */,
+				4A0A1ADC29CB619600DBAA7B /* CaptchaButton.swift */,
 			);
 			path = captcha;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A0A1ADD29CB619600DBAA7B /* CaptchaButton.swift in Sources */,
 				4AD83EED29C8BFC2009E29FE /* ViewController.swift in Sources */,
 				4AD83EFD29C8BFF0009E29FE /* CaptchaImageView.swift in Sources */,
 				4AD83EE929C8BFC2009E29FE /* AppDelegate.swift in Sources */,

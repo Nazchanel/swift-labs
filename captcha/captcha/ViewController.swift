@@ -13,6 +13,10 @@ var soundList : [String] = []
 
 var correctAnswer : String = ""
 
+var selectedAnswer : String = ""
+
+var incorrectAnswers : Int = 0
+
 class ViewController: UIViewController {
     @IBOutlet var imageViews: [CaptchaImageView]!
     
@@ -37,7 +41,7 @@ class ViewController: UIViewController {
             soundList = sounds
             
         } catch {
-            print("error")
+            print("\nerror\n")
         }
         
         for imageView in imageViews
@@ -61,13 +65,15 @@ class ViewController: UIViewController {
         for i in imageViews
         {
             i.image = UIImage(named: imagePath + listMix[index])
-            i.imageName = listMix[index]
+            var temp = listMix[index]
+            temp.removeLast(4)
+            i.imageName = temp
             index += 1
         }
-        correctAnswerText.text = getCorrectAnswer()
+        getCorrectAnswer()
         
     }
-    func getCorrectAnswer() -> String
+    func getCorrectAnswer()
     {
         var listOfImages : [String] = []
         
@@ -75,13 +81,56 @@ class ViewController: UIViewController {
         {
             listOfImages.append(img.imageName)
         }
-        return listOfImages.randomElement()!
         
+        correctAnswerText.text = listOfImages.randomElement()!
+        correctAnswer = correctAnswerText.text!
+                
     }
     @objc func imageTapped(sender: UITapGestureRecognizer) {
         if sender.state == .ended {
-            print("UIImageView tapped")
-            print(sender.view as! CaptchaImageView)
+            let a = sender.view as! CaptchaImageView
+            let valdity: Bool = checkAnswer(answer: a.imageName)
+            
+            print("\nPicked Answer: \(a.imageName)\n")
+            
+            if !checkAnswer(answer: a.imageName)
+            {
+                a.shake()
+                incorrectAnswers += 1
+            }
+            transition(answerValidity: valdity)
         }
     }
+    func checkAnswer(answer : String) -> Bool
+    {
+        if answer == correctAnswer
+        {
+            print("\nCORRECT\n")
+            
+            return true
+        }
+        else
+        {
+            print("\nINCORRECT\n")
+            
+            return false
+            
+        }
+    }
+    func transition(answerValidity : Bool)
+    {
+        if !answerValidity && incorrectAnswers == 2
+        {
+            
+            // Will implement UIView.transition later
+            // performSegue(withIdentifier: "tooWrong", sender: nil)
+            
+        }
+        assignRandomImages()
+    }
+    func animation()
+    {
+        
+    }
+    
 }

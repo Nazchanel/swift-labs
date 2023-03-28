@@ -9,7 +9,6 @@ import UIKit
 
 var imageList : [String] = []
 
-var soundList : [String] = []
 
 var correctAnswer : String = ""
 
@@ -28,17 +27,12 @@ class ViewController: UIViewController {
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
         
-        let soundPath = "\(path)/Sounds/"
-        
         let imagePath = "\(path)/Images/"
         
-        
         do {
-            let sounds = try fm.contentsOfDirectory(atPath: soundPath)
             let images = try fm.contentsOfDirectory(atPath: imagePath)
             
             imageList = images
-            soundList = sounds
             
         } catch {
             print("\nerror\n")
@@ -84,7 +78,7 @@ class ViewController: UIViewController {
         
         correctAnswerText.text = listOfImages.randomElement()!
         correctAnswer = correctAnswerText.text!
-                
+        
     }
     @objc func imageTapped(sender: UITapGestureRecognizer) {
         if sender.state == .ended {
@@ -119,14 +113,24 @@ class ViewController: UIViewController {
     }
     func transition(answerValidity : Bool)
     {
-        if !answerValidity && incorrectAnswers == 2
+        if answerValidity && incorrectAnswers < 2
         {
-            
-            // Will implement UIView.transition later
-            // performSegue(withIdentifier: "tooWrong", sender: nil)
+            // Text Captcha Passed
+            incorrectAnswers = 0
+            performSegue(withIdentifier: "audioCaptcha", sender: nil)
             
         }
-        assignRandomImages()
+        else if !answerValidity && incorrectAnswers == 2
+        {
+            // Text Captcha Failed
+            incorrectAnswers = 0
+            performSegue(withIdentifier: "tooWrong", sender: nil)
+        }
+        else
+        {
+            // First Attempt Failed
+            assignRandomImages()
+        }
     }
     func animation()
     {

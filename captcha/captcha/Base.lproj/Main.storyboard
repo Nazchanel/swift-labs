@@ -17,30 +17,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="250" translatesAutoresizingMaskIntoConstraints="NO" id="GES-zL-2tX">
-                                <rect key="frame" x="30" y="321" width="330" height="289"/>
+                                <rect key="frame" x="30" y="321" width="330" height="364"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ydD-qa-Fgc">
-                                        <rect key="frame" x="0.0" y="0.0" width="330" height="19.666666666666668"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="330" height="57"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3uz-I2-nJF" customClass="CaptchaImageView" customModule="captcha" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="155" height="19.666666666666668"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="155" height="57"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1af-KT-9H5" customClass="CaptchaImageView" customModule="captcha" customModuleProvider="target">
-                                                <rect key="frame" x="175" y="0.0" width="155" height="19.666666666666668"/>
+                                                <rect key="frame" x="175" y="0.0" width="155" height="57"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jto-xb-tBL">
-                                        <rect key="frame" x="0.0" y="269.66666666666663" width="330" height="19.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="307" width="330" height="57"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NtO-cZ-bm2" customClass="CaptchaImageView" customModule="captcha" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="155" height="19.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="155" height="57"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UlA-ck-1dU" customClass="CaptchaImageView" customModule="captcha" customModuleProvider="target">
-                                                <rect key="frame" x="175" y="0.0" width="155" height="19.333333333333332"/>
+                                                <rect key="frame" x="175" y="0.0" width="155" height="57"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </imageView>
                                         </subviews>
@@ -78,7 +78,7 @@
                             <constraint firstItem="gjH-Wy-Uf5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="ABT-Ze-IEn"/>
                             <constraint firstItem="MvV-Ht-zmD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="EwQ-Kq-XvD"/>
                             <constraint firstItem="gjH-Wy-Uf5" firstAttribute="top" secondItem="MvV-Ht-zmD" secondAttribute="bottom" constant="10" id="QoJ-p9-7By"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GES-zL-2tX" secondAttribute="bottom" constant="200" id="RXL-Ua-SZk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GES-zL-2tX" secondAttribute="bottom" constant="125" id="RXL-Ua-SZk"/>
                             <constraint firstAttribute="trailing" secondItem="GES-zL-2tX" secondAttribute="trailing" constant="30" id="agf-YY-U4A"/>
                             <constraint firstItem="GES-zL-2tX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="vuW-D2-fO6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gjH-Wy-Uf5" secondAttribute="trailing" constant="80" id="vwC-CG-ELY"/>
@@ -92,12 +92,37 @@
                         <outletCollection property="imageViews" destination="NtO-cZ-bm2" collectionClass="NSMutableArray" id="MpK-cH-w7q"/>
                         <outletCollection property="imageViews" destination="UlA-ck-1dU" collectionClass="NSMutableArray" id="xCI-vq-lqe"/>
                         <segue destination="kmi-rS-A0k" kind="show" identifier="tooWrong" id="1q1-2q-4Pq"/>
-                        <segue destination="emT-NP-hSp" kind="show" id="D9a-vK-Jpa"/>
+                        <segue destination="emT-NP-hSp" kind="show" identifier="audioCaptcha" id="D9a-vK-Jpa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966.15384615384608" y="-109.47867298578198"/>
+            <point key="canvasLocation" x="969" y="-119"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="eaJ-Pa-WQf">
+            <objects>
+                <viewController id="fBW-Ja-Jbm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zzs-fm-2Fd">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You are not a robot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KSF-Zy-8aT">
+                                <rect key="frame" x="87" y="268" width="217" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jwv-xc-ATs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="i1K-5C-o2h"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hV0-27-LHh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="766.15384615384608" y="663.98104265402844"/>
         </scene>
         <!--Audio Captcha-->
         <scene sceneID="Jum-6v-eqJ">
@@ -106,14 +131,55 @@
                     <view key="view" contentMode="scaleToFill" id="7as-s2-IoF">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRt-Eo-XLP">
+                                <rect key="frame" x="117" y="165" width="157" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system" title=""/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pV5-hr-FhL" customClass="CaptchaButton" customModule="captcha" customModuleProvider="target">
+                                <rect key="frame" x="270" y="585" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXt-DI-y5w" customClass="CaptchaButton" customModule="captcha" customModuleProvider="target">
+                                <rect key="frame" x="49" y="585" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dYw-8N-2q8" customClass="CaptchaButton" customModule="captcha" customModuleProvider="target">
+                                <rect key="frame" x="270" y="476" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t2r-im-piK" customClass="CaptchaButton" customModule="captcha" customModuleProvider="target">
+                                <rect key="frame" x="49" y="476" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="u30-W9-YbL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="Zcg-jv-YuQ"/>
+                    <connections>
+                        <outlet property="playAudioButton" destination="bRt-Eo-XLP" id="XaS-2V-ELZ"/>
+                        <outletCollection property="answerChoiceButtons" destination="t2r-im-piK" collectionClass="NSMutableArray" id="oNV-LS-kVQ"/>
+                        <outletCollection property="answerChoiceButtons" destination="dYw-8N-2q8" collectionClass="NSMutableArray" id="zbn-RZ-Kz5"/>
+                        <outletCollection property="answerChoiceButtons" destination="IXt-DI-y5w" collectionClass="NSMutableArray" id="HRR-C2-ys9"/>
+                        <outletCollection property="answerChoiceButtons" destination="pV5-hr-FhL" collectionClass="NSMutableArray" id="GVc-pb-Rge"/>
+                        <segue destination="kmi-rS-A0k" kind="show" identifier="tooWrong" id="XzQ-U7-tcn"/>
+                        <segue destination="fBW-Ja-Jbm" kind="show" identifier="notARobot" id="lek-nK-DsU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iph-w9-LEo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1820" y="624"/>
+            <point key="canvasLocation" x="1928" y="613"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="HKF-89-mVO">
@@ -134,10 +200,11 @@
                         <viewLayoutGuide key="safeArea" id="Grc-q5-7Eb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="n6m-zG-Cs6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cY8-Wp-tBI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1820" y="-109.47867298578198"/>
+            <point key="canvasLocation" x="2118" y="-213"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NmI-Vb-OXi">
@@ -158,7 +225,11 @@
             <point key="canvasLocation" x="36.92307692307692" y="-109.47867298578198"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="XzQ-U7-tcn"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="play.fill" catalog="system" width="117" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

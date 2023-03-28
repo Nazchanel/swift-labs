@@ -9,8 +9,10 @@ import UIKit
 
 @IBDesignable
 
-class CaptchaButton : UIImageView
+class CaptchaButton : UIButton
 {
+    var buttonName : String = ""
+    
     func shake() {
             let animation = CABasicAnimation(keyPath: "position")
             

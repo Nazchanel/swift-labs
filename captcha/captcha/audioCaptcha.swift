@@ -10,6 +10,7 @@ import AVFoundation
 
 var soundList : [String] = []
 var soundNameList : [String] = []
+var currentAnswer : String = ""
 
 class audioCaptcha: UIViewController {
     var player: AVAudioPlayer!
@@ -21,8 +22,6 @@ class audioCaptcha: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
         
@@ -30,11 +29,10 @@ class audioCaptcha: UIViewController {
         
         do {
             let sounds = try fm.contentsOfDirectory(atPath: soundPath)
-            
             soundList = sounds
             
         } catch {
-            print("\nerror\n")
+            print("\nError\n")
         }
         for i in soundList
         {
@@ -46,6 +44,11 @@ class audioCaptcha: UIViewController {
             j.removeFirst()
             
             soundNameList.append(j)
+        }
+        for i in 0...3
+        {
+            answerChoices[i].addTarget(self, action: #selector(answerChoicePressed(_:)), for: .touchUpInside)
+            answerChoices[i].backgroundColor = .blue
         }
         
     }
@@ -65,10 +68,24 @@ class audioCaptcha: UIViewController {
     }
     func assignButtons()
     {
+        var j = 1
         for i in answerChoiceButtons
         {
+            let text = soundNameList[j]
+            i.setTitle(text, for: .normal)
+            j+=1
         }
     }
+    func assignAnswer()
+    {
+        var lst : [String]= soundNameList
+        lst.shuffle()
+        
+    }
+       @objc func answerChoicePressed(_ sender: UIButton!){
+        let pickedAnswer : String = sender.currentTitle
+        
+       }
     
     
     

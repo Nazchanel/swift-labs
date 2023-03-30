@@ -137,6 +137,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="play.fill" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="playButtonPressed:" destination="emT-NP-hSp" eventType="touchUpInside" id="lkT-bV-zcN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pV5-hr-FhL" customClass="CaptchaButton" customModule="captcha" customModuleProvider="target">
                                 <rect key="frame" x="270" y="585" width="75" height="35"/>
@@ -225,6 +228,20 @@
             <point key="canvasLocation" x="36.92307692307692" y="-109.47867298578198"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="IXt-DI-y5w">
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+        </designable>
+        <designable name="dYw-8N-2q8">
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+        </designable>
+        <designable name="pV5-hr-FhL">
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+        </designable>
+        <designable name="t2r-im-piK">
+            <size key="intrinsicContentSize" width="75" height="34.333333333333336"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="XzQ-U7-tcn"/>
     </inferredMetricsTieBreakers>

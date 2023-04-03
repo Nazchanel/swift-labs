@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19142.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nLh-6s-JVU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nLh-6s-JVU">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19129"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -68,7 +69,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nLh-6s-JVU" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="9mb-MX-WNw">
-                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
+                        <rect key="frame" x="0.0" y="47" width="390" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -80,22 +81,22 @@
             </objects>
             <point key="canvasLocation" x="250" y="139"/>
         </scene>
-        <!--View Controller-->
+        <!--Athlete Form View Controller-->
         <scene sceneID="7QF-jC-5Vc">
             <objects>
-                <viewController id="Jdx-qb-Jda" sceneMemberID="viewController">
+                <viewController id="Jdx-qb-Jda" customClass="AthleteFormViewController" customModule="FavoriteAthlete" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JTh-XC-suT">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who is your favorite athlete?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMl-8B-WSV">
-                                <rect key="frame" x="87" y="113" width="216" height="20.333333333333343"/>
+                                <rect key="frame" x="87" y="116" width="216" height="20.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jRn-j8-8hv">
-                                <rect key="frame" x="46" y="187" width="298" height="166"/>
+                                <rect key="frame" x="46" y="190" width="298" height="166"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Ms-Uu-Heg">
                                         <rect key="frame" x="0.0" y="0.0" width="298" height="34"/>
@@ -120,8 +121,11 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r8l-hP-2us">
-                                <rect key="frame" x="178" y="385" width="34" height="30"/>
+                                <rect key="frame" x="178" y="388" width="34" height="30"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="Jdx-qb-Jda" eventType="touchUpInside" id="7JU-65-Jla"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1la-jA-Pb4"/>
@@ -138,10 +142,10 @@
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="vBG-05-QLL"/>
                     <connections>
-                        <outlet property="ageTextField" destination="5BH-RZ-lV3" id="1R7-Jn-nje"/>
-                        <outlet property="leagueTextField" destination="Qwm-lN-Kse" id="gYY-f1-HQF"/>
-                        <outlet property="nameTextField" destination="9Ms-Uu-Heg" id="VJo-C5-mAK"/>
-                        <outlet property="teamTextField" destination="uqw-ia-7EH" id="06a-T2-sLw"/>
+                        <outlet property="ageTextField" destination="5BH-RZ-lV3" id="14B-qs-GPn"/>
+                        <outlet property="leagueTextField" destination="Qwm-lN-Kse" id="E2D-Rp-Ckh"/>
+                        <outlet property="nameTextField" destination="9Ms-Uu-Heg" id="e1R-oc-ylz"/>
+                        <outlet property="teamTextField" destination="uqw-ia-7EH" id="aN1-hb-iAg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRJ-p2-DTp" sceneMemberID="firstResponder"/>

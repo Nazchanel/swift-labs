@@ -140,6 +140,7 @@ class audioCaptcha: UIViewController {
     }
     func transition(answerValidity : Bool)
     {
+        print("Incorrect Answers: \(incorrectAnswerCount)")
         if answerValidity && incorrectAnswerCount < 2
         {
             // Text Captcha Passed
@@ -156,6 +157,7 @@ class audioCaptcha: UIViewController {
         else
         {
             // First Attempt Failed
+            incorrectAnswerCount += 1
             assignAnswer()
             assignButtons(flag: false)
         }

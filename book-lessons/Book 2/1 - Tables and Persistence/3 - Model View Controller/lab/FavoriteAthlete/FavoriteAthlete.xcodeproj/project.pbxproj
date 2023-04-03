@@ -13,6 +13,8 @@
 		1830B16F23A3064300FF29B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1830B16E23A3064300FF29B5 /* Assets.xcassets */; };
 		1830B17223A3064300FF29B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1830B17023A3064300FF29B5 /* LaunchScreen.storyboard */; };
 		1830B17A23A3067E00FF29B5 /* AthleteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1830B17923A3067E00FF29B5 /* AthleteTableViewController.swift */; };
+		4AB5425C29DB31CC00619F20 /* AthleteFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5425B29DB31CC00619F20 /* AthleteFormViewController.swift */; };
+		4AB5425E29DB335D00619F20 /* Athlete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AB5425D29DB335D00619F20 /* Athlete.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		1830B17123A3064300FF29B5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1830B17323A3064300FF29B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1830B17923A3067E00FF29B5 /* AthleteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteTableViewController.swift; sourceTree = "<group>"; };
+		4AB5425B29DB31CC00619F20 /* AthleteFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteFormViewController.swift; sourceTree = "<group>"; };
+		4AB5425D29DB335D00619F20 /* Athlete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Athlete.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				1830B16E23A3064300FF29B5 /* Assets.xcassets */,
 				1830B17023A3064300FF29B5 /* LaunchScreen.storyboard */,
 				1830B17323A3064300FF29B5 /* Info.plist */,
+				4AB5425B29DB31CC00619F20 /* AthleteFormViewController.swift */,
+				4AB5425D29DB335D00619F20 /* Athlete.swift */,
 			);
 			path = FavoriteAthlete;
 			sourceTree = "<group>";
@@ -137,6 +143,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AB5425E29DB335D00619F20 /* Athlete.swift in Sources */,
+				4AB5425C29DB31CC00619F20 /* AthleteFormViewController.swift in Sources */,
 				1830B16623A3064200FF29B5 /* AppDelegate.swift in Sources */,
 				1830B16823A3064200FF29B5 /* SceneDelegate.swift in Sources */,
 				1830B17A23A3067E00FF29B5 /* AthleteTableViewController.swift in Sources */,

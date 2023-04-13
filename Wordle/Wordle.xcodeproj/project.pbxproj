@@ -15,6 +15,7 @@
 		4A5F984C29DB3AD800653B2E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A5F984A29DB3AD800653B2E /* LaunchScreen.storyboard */; };
 		4A5F985429DB3B5500653B2E /* Wordle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F985329DB3B5500653B2E /* Wordle.swift */; };
 		4A5F985829DB3C7B00653B2E /* words.txt in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F985729DB3C7B00653B2E /* words.txt */; };
+		4AA1CF4029E5C6390044C0F6 /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4A5F985729DB3C7B00653B2E /* words.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -131,6 +132,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA1CF4029E5C6390044C0F6 /* words.txt in Resources */,
 				4A5F984C29DB3AD800653B2E /* LaunchScreen.storyboard in Resources */,
 				4A5F984929DB3AD800653B2E /* Assets.xcassets in Resources */,
 				4A5F984729DB3AD700653B2E /* Main.storyboard in Resources */,

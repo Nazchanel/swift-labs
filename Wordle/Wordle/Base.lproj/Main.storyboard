@@ -450,7 +450,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X5m-f3-hHD">
-                                <rect key="frame" x="65" y="167.33333333333334" width="260" height="67.333333333333343"/>
+                                <rect key="frame" x="65" y="167.33333333333334" width="260" height="82.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -470,7 +470,7 @@
                             <constraint firstItem="qSR-PB-0yp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="4DY-LJ-dpb"/>
                             <constraint firstItem="qSR-PB-0yp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="15" id="96i-p7-wVD"/>
                             <constraint firstItem="9WX-BP-CIO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="118" id="Ck1-Yh-XF4"/>
-                            <constraint firstItem="zs3-K1-clX" firstAttribute="top" secondItem="X5m-f3-hHD" secondAttribute="bottom" constant="35" id="JFW-bF-n6n"/>
+                            <constraint firstItem="zs3-K1-clX" firstAttribute="top" secondItem="X5m-f3-hHD" secondAttribute="bottom" constant="20" id="JFW-bF-n6n"/>
                             <constraint firstItem="fSO-z2-POu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="165" id="JzE-ib-f0o"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zs3-K1-clX" secondAttribute="trailing" constant="12" id="KPu-bw-n4P"/>
                             <constraint firstItem="9WX-BP-CIO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="LlC-pn-a8F"/>
@@ -490,6 +490,35 @@
                         <outlet property="deadLetterLabel" destination="fSO-z2-POu" id="s9R-3R-lfg"/>
                         <outlet property="wordField" destination="X5m-f3-hHD" id="GM1-Lc-lEj"/>
                         <outletCollection property="allLetters" destination="GVN-Je-d83" collectionClass="NSMutableArray" id="tbA-Lj-bJJ"/>
+                        <outletCollection property="allLetters" destination="fOk-kW-3uc" collectionClass="NSMutableArray" id="42t-IA-9gn"/>
+                        <outletCollection property="allLetters" destination="nXD-hN-tpu" collectionClass="NSMutableArray" id="tLh-xd-NTL"/>
+                        <outletCollection property="allLetters" destination="blN-nj-eGL" collectionClass="NSMutableArray" id="1JM-sr-P7V"/>
+                        <outletCollection property="allLetters" destination="Cdq-KG-Dtd" collectionClass="NSMutableArray" id="hlr-9U-HO2"/>
+                        <outletCollection property="allLetters" destination="AZc-uj-8eR" collectionClass="NSMutableArray" id="HPh-My-AjH"/>
+                        <outletCollection property="allLetters" destination="sDt-lI-hdl" collectionClass="NSMutableArray" id="UIP-wa-EGL"/>
+                        <outletCollection property="allLetters" destination="Enf-Ea-e1G" collectionClass="NSMutableArray" id="kFV-O0-ggs"/>
+                        <outletCollection property="allLetters" destination="rFc-Kl-TLQ" collectionClass="NSMutableArray" id="K8C-Nk-BD2"/>
+                        <outletCollection property="allLetters" destination="0X3-P2-48D" collectionClass="NSMutableArray" id="viV-B9-yd6"/>
+                        <outletCollection property="allLetters" destination="edp-vC-tnv" collectionClass="NSMutableArray" id="MUw-Lm-2FC"/>
+                        <outletCollection property="allLetters" destination="wZF-6X-ycJ" collectionClass="NSMutableArray" id="HTd-fj-UzB"/>
+                        <outletCollection property="allLetters" destination="hOZ-TO-3BN" collectionClass="NSMutableArray" id="mTW-io-5fs"/>
+                        <outletCollection property="allLetters" destination="wJy-k4-ZBe" collectionClass="NSMutableArray" id="jtA-Yw-0tc"/>
+                        <outletCollection property="allLetters" destination="KnS-CO-ovH" collectionClass="NSMutableArray" id="Wye-Bj-bad"/>
+                        <outletCollection property="allLetters" destination="wWO-8r-yjZ" collectionClass="NSMutableArray" id="WX7-dd-rCl"/>
+                        <outletCollection property="allLetters" destination="08w-KF-e7F" collectionClass="NSMutableArray" id="hWf-RX-apH"/>
+                        <outletCollection property="allLetters" destination="xEG-hr-f11" collectionClass="NSMutableArray" id="ipF-GR-YWW"/>
+                        <outletCollection property="allLetters" destination="u1T-yZ-5Nm" collectionClass="NSMutableArray" id="QZR-Ef-DQY"/>
+                        <outletCollection property="allLetters" destination="U8A-Uz-bvr" collectionClass="NSMutableArray" id="ZJh-UM-BSD"/>
+                        <outletCollection property="allLetters" destination="eKk-uD-Fzy" collectionClass="NSMutableArray" id="yvX-sn-42m"/>
+                        <outletCollection property="allLetters" destination="lib-fj-UBm" collectionClass="NSMutableArray" id="uOT-8v-IDo"/>
+                        <outletCollection property="allLetters" destination="qOs-4Y-Efw" collectionClass="NSMutableArray" id="YaK-h5-saQ"/>
+                        <outletCollection property="allLetters" destination="rWV-9E-lA3" collectionClass="NSMutableArray" id="Xkd-7m-V7x"/>
+                        <outletCollection property="allLetters" destination="gRB-I0-aOV" collectionClass="NSMutableArray" id="Nr7-g6-QSU"/>
+                        <outletCollection property="allLetters" destination="vQ3-nJ-ZyH" collectionClass="NSMutableArray" id="a35-T1-Qtg"/>
+                        <outletCollection property="allLetters" destination="4rX-3W-SBT" collectionClass="NSMutableArray" id="BOw-71-w87"/>
+                        <outletCollection property="allLetters" destination="2Ur-j7-qWx" collectionClass="NSMutableArray" id="D7j-np-P6Z"/>
+                        <outletCollection property="allLetters" destination="L9e-3B-hq9" collectionClass="NSMutableArray" id="Eik-Vk-KVH"/>
+                        <outletCollection property="allLetters" destination="vsP-xG-cju" collectionClass="NSMutableArray" id="GA1-Ur-v0d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

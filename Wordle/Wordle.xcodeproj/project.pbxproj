@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A1D5EBF29EDAB690066AE62 /* settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1D5EBE29EDAB690066AE62 /* settings.swift */; };
 		4A5F984029DB3AD700653B2E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F983F29DB3AD700653B2E /* AppDelegate.swift */; };
 		4A5F984229DB3AD700653B2E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F984129DB3AD700653B2E /* SceneDelegate.swift */; };
 		4A5F984429DB3AD700653B2E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F984329DB3AD700653B2E /* ViewController.swift */; };
@@ -16,9 +17,11 @@
 		4A5F985429DB3B5500653B2E /* Wordle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F985329DB3B5500653B2E /* Wordle.swift */; };
 		4A5F985829DB3C7B00653B2E /* words.txt in Sources */ = {isa = PBXBuildFile; fileRef = 4A5F985729DB3C7B00653B2E /* words.txt */; };
 		4AA1CF4029E5C6390044C0F6 /* words.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4A5F985729DB3C7B00653B2E /* words.txt */; };
+		4AF068DE29EDB02800D6DC1D /* WordleEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF068DD29EDB02800D6DC1D /* WordleEntry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A1D5EBE29EDAB690066AE62 /* settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settings.swift; sourceTree = "<group>"; };
 		4A5F983C29DB3AD700653B2E /* Wordle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wordle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A5F983F29DB3AD700653B2E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4A5F984129DB3AD700653B2E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +32,7 @@
 		4A5F984D29DB3AD800653B2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A5F985329DB3B5500653B2E /* Wordle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wordle.swift; sourceTree = "<group>"; };
 		4A5F985729DB3C7B00653B2E /* words.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = words.txt; sourceTree = "<group>"; };
+		4AF068DD29EDB02800D6DC1D /* WordleEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordleEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 		4A5F983E29DB3AD700653B2E /* Wordle */ = {
 			isa = PBXGroup;
 			children = (
+				4AF068DD29EDB02800D6DC1D /* WordleEntry.swift */,
 				4A5F983F29DB3AD700653B2E /* AppDelegate.swift */,
 				4A5F984129DB3AD700653B2E /* SceneDelegate.swift */,
 				4A5F984329DB3AD700653B2E /* ViewController.swift */,
@@ -70,6 +75,7 @@
 				4A5F984D29DB3AD800653B2E /* Info.plist */,
 				4A5F985729DB3C7B00653B2E /* words.txt */,
 				4A5F985329DB3B5500653B2E /* Wordle.swift */,
+				4A1D5EBE29EDAB690066AE62 /* settings.swift */,
 			);
 			path = Wordle;
 			sourceTree = "<group>";
@@ -148,7 +154,9 @@
 			files = (
 				4A5F985429DB3B5500653B2E /* Wordle.swift in Sources */,
 				4A5F984429DB3AD700653B2E /* ViewController.swift in Sources */,
+				4A1D5EBF29EDAB690066AE62 /* settings.swift in Sources */,
 				4A5F984029DB3AD700653B2E /* AppDelegate.swift in Sources */,
+				4AF068DE29EDB02800D6DC1D /* WordleEntry.swift in Sources */,
 				4A5F984229DB3AD700653B2E /* SceneDelegate.swift in Sources */,
 				4A5F985829DB3C7B00653B2E /* words.txt in Sources */,
 			);

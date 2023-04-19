@@ -30,8 +30,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GREEN means the letter is in the word in the correct spot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xhe-hv-2Sd">
-                                <rect key="frame" x="41" y="387" width="308" height="93"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YELLOW means the letter is in the word in the correct spot" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xhe-hv-2Sd">
+                                <rect key="frame" x="29" y="387" width="332" height="129"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -44,8 +44,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GREEN means the letter is in the word in the correct spot" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zm-9E-HKF">
-                                <rect key="frame" x="42" y="480" width="308" height="93"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GREEN means the letter is in the word in the correct spot" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Zm-9E-HKF">
+                                <rect key="frame" x="41" y="523" width="308" height="131"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GREY means the letter is no where in the word" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfH-Jf-vhy">
+                                <rect key="frame" x="42" y="633" width="308" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -497,13 +504,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9d-kz-1sa">
-                                <rect key="frame" x="174" y="738" width="0.0" height="0.0"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9d-kz-1sa">
+                                <rect key="frame" x="20" y="724.66666666666663" width="350" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="8yM-e5-FEI"/>
+                                    <constraint firstAttribute="width" constant="350" id="OYT-Fb-mPP"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2L-TC-OD8">
+                                <rect key="frame" x="159" y="640.33333333333337" width="72" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" image="arrow.uturn.right" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="resetPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w8j-c6-Vtw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -514,16 +532,22 @@
                             <constraint firstItem="zs3-K1-clX" firstAttribute="top" secondItem="X5m-f3-hHD" secondAttribute="bottom" constant="30" id="JFW-bF-n6n"/>
                             <constraint firstItem="fSO-z2-POu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="120" id="JzE-ib-f0o"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zs3-K1-clX" secondAttribute="trailing" constant="12" id="KPu-bw-n4P"/>
+                            <constraint firstItem="v2L-TC-OD8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="159" id="LTP-Bx-Eeq"/>
                             <constraint firstItem="9WX-BP-CIO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="LlC-pn-a8F"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9WX-BP-CIO" secondAttribute="trailing" constant="118" id="LmR-1n-YlB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X5m-f3-hHD" secondAttribute="trailing" constant="65" id="MV8-Ml-1Up"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h9d-kz-1sa" secondAttribute="trailing" constant="20" id="RUs-fP-KWI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mQO-KF-M1r" secondAttribute="trailing" constant="15" id="VO6-uP-GwQ"/>
+                            <constraint firstItem="h9d-kz-1sa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="X0d-gf-SBX"/>
                             <constraint firstItem="X5m-f3-hHD" firstAttribute="top" secondItem="9WX-BP-CIO" secondAttribute="bottom" constant="30" id="ajQ-Ff-M3V"/>
                             <constraint firstItem="fSO-z2-POu" firstAttribute="top" secondItem="zs3-K1-clX" secondAttribute="bottom" constant="70" id="flW-Ec-lMg"/>
                             <constraint firstItem="X5m-f3-hHD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="65" id="gfs-V5-HBR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fSO-z2-POu" secondAttribute="trailing" constant="120" id="gtI-v2-bZO"/>
                             <constraint firstItem="mQO-KF-M1r" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="hQz-07-iRU"/>
                             <constraint firstItem="mQO-KF-M1r" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9WX-BP-CIO" secondAttribute="trailing" constant="8" symbolic="YES" id="iDx-mx-ioM"/>
+                            <constraint firstItem="v2L-TC-OD8" firstAttribute="top" secondItem="zs3-K1-clX" secondAttribute="bottom" constant="16" id="kL0-BV-MvG"/>
+                            <constraint firstItem="h9d-kz-1sa" firstAttribute="top" secondItem="fSO-z2-POu" secondAttribute="bottom" constant="10" id="lqV-hN-SvR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="v2L-TC-OD8" secondAttribute="trailing" constant="159" id="n91-yM-t0a"/>
                             <constraint firstItem="zs3-K1-clX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="nyO-h0-VWa"/>
                         </constraints>
                     </view>
@@ -676,9 +700,15 @@
             <point key="canvasLocation" x="922" y="-28"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="X5m-f3-hHD">
+            <size key="intrinsicContentSize" width="32" height="34"/>
+        </designable>
+    </designables>
     <resources>
+        <image name="arrow.uturn.right" catalog="system" width="128" height="113"/>
         <image name="gearshape.fill" catalog="system" width="128" height="123"/>
-        <image name="questionmark.app.fill" catalog="system" width="128" height="114"/>
+        <image name="questionmark.app.fill" catalog="system" width="32" height="32"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -16,6 +16,7 @@ var colorList : [Int] = [0, 0, 0, 0, 0]
 var currentLabelIndex : Int = 0
 let wordLength : Int = 5
 let guessAmount : Int = 6
+var correctGuessesLeft : Int = guessAmount-1
 
 var isFirstTime : Bool = true
 
@@ -63,6 +64,8 @@ class ViewController: UIViewController {
         {
             wordSelection()
         }
+        print("Correct Word: \(correctWord)")
+        
         
     }
     
@@ -78,10 +81,20 @@ class ViewController: UIViewController {
         
         
         
-        print("Correct Word: \(correctWord)")
-        print("Guess Word: \(guess)")
-        
         if isFirstTime{
+            // Dead Letters Adder
+            for i in [Int](0...guessArray.count-1)
+            {
+                let index = correctWordArray.firstIndex(of: guessArray[i])
+                
+                if index == nil
+                {
+                    deadLetters.append(String(guessArray[i]))
+                    
+                }
+                
+            }
+            
             // Green Checker
             for i in [Int](0...guessArray.count-1)
             {
@@ -108,6 +121,18 @@ class ViewController: UIViewController {
         }
         else
         {
+            // Dead Letters Adder
+            for i in [Int](0...guessArray.count-1)
+            {
+                let index = correctWordArray.firstIndex(of: guessArray[i])
+                
+                if index == nil
+                {
+                    deadLetters.append(String(guessArray[i]))
+                    
+                }
+                
+            }
             // Green Checker
             for i in [Int](0...guessArray.count-1)
             {
@@ -131,22 +156,21 @@ class ViewController: UIViewController {
                 
             }
             
-            // Dead Letters Adder
-            for i in [Int](0...guessArray.count-1)
-            {
-                let index = correctWordArray.firstIndex(of: guessArray[i])
-                if index == nil
-                {
-                    deadLetters.append(String(guessArray[i]))
-                    
-                }
-                
-            }
+            
             colorList.append(contentsOf: tempList)
         }
         if tempList == [1, 1, 1, 1, 1] || colorList == [1, 1, 1, 1, 1]
         {
-            gameWin()
+            displayWinAlert()
+        }
+        else if correctGuessesLeft > 0
+        {
+            correctGuessesLeft -= 1
+            
+        }
+        else
+        {
+            displayLoseAlert()
         }
         deadLetterInitializer()
         setLabels(colorList: colorList, guessArray: originalGuessArray)
@@ -178,35 +202,30 @@ class ViewController: UIViewController {
     
     func deadLetterInitializer()
     {
+        let tempList = Array(Set(deadLetters))
+        
         var tempStr : String = ""
         
-        for i in deadLetters{
+        for i in tempList{
             tempStr += " \(i) "
         }
+        
+        
+        
         deadLetterLabel.text = tempStr
+        
         
     }
     
-    func gameWin()
-    {
-        
-        print("You Won!")
-        displayAlert()
-        
-    }
-    func displayAlert()
-    {
-        let dialogMessage = UIAlertController(title: "You Win!", message: "Congratulations", preferredStyle: .alert)
-        
-        dialogMessage.addAction(UIAlertAction(title: "Play Again", style: .default, handler: {_ in self.alertPressed()}))
-        
-        self.present(dialogMessage, animated: true, completion: nil)
-        
-        
-    }
     func alertPressed()
     {
-        correctWord = ""
+        if let startWordsURL = Bundle.main.url(forResource: "words", withExtension: "txt") {
+            if let startWords = try? String(contentsOf: startWordsURL) {
+                allWords = startWords.components(separatedBy: "\n")
+            }
+        }
+        
+        wordSelection()
         
         allWords = [String]()
         
@@ -228,9 +247,28 @@ class ViewController: UIViewController {
         }
         
         wordField.text = ""
+        correctGuessesLeft = guessAmount-1
         
     }
     
+    func displayLoseAlert()
+    {
+        let dialogMessage = UIAlertController(title: "You Lose!", message: "🙁", preferredStyle: .alert)
+        
+        dialogMessage.addAction(UIAlertAction(title: "Play Again", style: .default, handler: {_ in self.alertPressed()}))
+        
+        self.present(dialogMessage, animated: true, completion: nil)
+    }
+    func displayWinAlert()
+    {
+        let dialogMessage = UIAlertController(title: "You Win!", message: "Congratulations", preferredStyle: .alert)
+        
+        dialogMessage.addAction(UIAlertAction(title: "Play Again", style: .default, handler: {_ in self.alertPressed()}))
+        
+        self.present(dialogMessage, animated: true, completion: nil)
+    }
     
+    @IBAction func resetPressed(_ sender: Any) {
+        alertPressed()
+    }
 }
-

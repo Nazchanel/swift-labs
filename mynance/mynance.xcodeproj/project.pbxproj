@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4ADA83DB29FADE7C00447A25 /* NewTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA83DA29FADE7C00447A25 /* NewTransactionViewController.swift */; };
 		4AE1331129F831FD006EA8FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE1331029F831FD006EA8FB /* AppDelegate.swift */; };
 		4AE1331329F831FD006EA8FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE1331229F831FD006EA8FB /* SceneDelegate.swift */; };
-		4AE1331529F831FD006EA8FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE1331429F831FD006EA8FB /* ViewController.swift */; };
+		4AE1331529F831FD006EA8FB /* TransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE1331429F831FD006EA8FB /* TransactionViewController.swift */; };
 		4AE1331829F831FD006EA8FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AE1331629F831FD006EA8FB /* Main.storyboard */; };
 		4AE1331A29F831FF006EA8FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AE1331929F831FF006EA8FB /* Assets.xcassets */; };
 		4AE1331D29F831FF006EA8FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AE1331B29F831FF006EA8FB /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4ADA83DA29FADE7C00447A25 /* NewTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionViewController.swift; sourceTree = "<group>"; };
 		4AE1330D29F831FD006EA8FB /* mynance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mynance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AE1331029F831FD006EA8FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AE1331229F831FD006EA8FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4AE1331429F831FD006EA8FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4AE1331429F831FD006EA8FB /* TransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionViewController.swift; sourceTree = "<group>"; };
 		4AE1331729F831FD006EA8FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4AE1331929F831FF006EA8FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4AE1331C29F831FF006EA8FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +39,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4ADA83DC29FADE8E00447A25 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4ADA83DA29FADE7C00447A25 /* NewTransactionViewController.swift */,
+				4AE1331429F831FD006EA8FB /* TransactionViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 		4AE1330429F831FD006EA8FB = {
 			isa = PBXGroup;
 			children = (
@@ -56,9 +67,9 @@
 		4AE1330F29F831FD006EA8FB /* mynance */ = {
 			isa = PBXGroup;
 			children = (
+				4ADA83DC29FADE8E00447A25 /* View Controllers */,
 				4AE1331029F831FD006EA8FB /* AppDelegate.swift */,
 				4AE1331229F831FD006EA8FB /* SceneDelegate.swift */,
-				4AE1331429F831FD006EA8FB /* ViewController.swift */,
 				4AE1331629F831FD006EA8FB /* Main.storyboard */,
 				4AE1331929F831FF006EA8FB /* Assets.xcassets */,
 				4AE1331B29F831FF006EA8FB /* LaunchScreen.storyboard */,
@@ -138,7 +149,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AE1331529F831FD006EA8FB /* ViewController.swift in Sources */,
+				4ADA83DB29FADE7C00447A25 /* NewTransactionViewController.swift in Sources */,
+				4AE1331529F831FD006EA8FB /* TransactionViewController.swift in Sources */,
 				4AE1331129F831FD006EA8FB /* AppDelegate.swift in Sources */,
 				4AE1331329F831FD006EA8FB /* SceneDelegate.swift in Sources */,
 			);

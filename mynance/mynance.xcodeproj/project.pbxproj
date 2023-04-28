@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A33023929FC352C00360B20 /* PurchaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A33023829FC352C00360B20 /* PurchaseTableViewCell.swift */; };
 		4ADA83DB29FADE7C00447A25 /* NewTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA83DA29FADE7C00447A25 /* NewTransactionViewController.swift */; };
 		4AE1331129F831FD006EA8FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE1331029F831FD006EA8FB /* AppDelegate.swift */; };
 		4AE1331329F831FD006EA8FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE1331229F831FD006EA8FB /* SceneDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A33023829FC352C00360B20 /* PurchaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseTableViewCell.swift; sourceTree = "<group>"; };
 		4ADA83DA29FADE7C00447A25 /* NewTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionViewController.swift; sourceTree = "<group>"; };
 		4AE1330D29F831FD006EA8FB /* mynance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mynance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AE1331029F831FD006EA8FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				4AE1331929F831FF006EA8FB /* Assets.xcassets */,
 				4AE1331B29F831FF006EA8FB /* LaunchScreen.storyboard */,
 				4AE1331E29F831FF006EA8FB /* Info.plist */,
+				4A33023829FC352C00360B20 /* PurchaseTableViewCell.swift */,
 			);
 			path = mynance;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				4AE1331529F831FD006EA8FB /* TransactionViewController.swift in Sources */,
 				4AE1331129F831FD006EA8FB /* AppDelegate.swift in Sources */,
 				4AE1331329F831FD006EA8FB /* SceneDelegate.swift in Sources */,
+				4A33023929FC352C00360B20 /* PurchaseTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

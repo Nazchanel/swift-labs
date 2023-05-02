@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A33023929FC352C00360B20 /* PurchaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A33023829FC352C00360B20 /* PurchaseTableViewCell.swift */; };
+		4A6331E62A0170AF00FAC940 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6331E52A0170AF00FAC940 /* Transaction.swift */; };
 		4ADA83DB29FADE7C00447A25 /* NewTransactionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADA83DA29FADE7C00447A25 /* NewTransactionViewController.swift */; };
 		4AE1331129F831FD006EA8FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE1331029F831FD006EA8FB /* AppDelegate.swift */; };
 		4AE1331329F831FD006EA8FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE1331229F831FD006EA8FB /* SceneDelegate.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		4A33023829FC352C00360B20 /* PurchaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseTableViewCell.swift; sourceTree = "<group>"; };
+		4A6331E52A0170AF00FAC940 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		4ADA83DA29FADE7C00447A25 /* NewTransactionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTransactionViewController.swift; sourceTree = "<group>"; };
 		4AE1330D29F831FD006EA8FB /* mynance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mynance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AE1331029F831FD006EA8FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 		4AE1330429F831FD006EA8FB = {
 			isa = PBXGroup;
 			children = (
+				4A6331E52A0170AF00FAC940 /* Transaction.swift */,
 				4AE1330F29F831FD006EA8FB /* mynance */,
 				4AE1330E29F831FD006EA8FB /* Products */,
 			);
@@ -154,6 +157,7 @@
 			files = (
 				4ADA83DB29FADE7C00447A25 /* NewTransactionViewController.swift in Sources */,
 				4AE1331529F831FD006EA8FB /* TransactionViewController.swift in Sources */,
+				4A6331E62A0170AF00FAC940 /* Transaction.swift in Sources */,
 				4AE1331129F831FD006EA8FB /* AppDelegate.swift in Sources */,
 				4AE1331329F831FD006EA8FB /* SceneDelegate.swift in Sources */,
 				4A33023929FC352C00360B20 /* PurchaseTableViewCell.swift in Sources */,

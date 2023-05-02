@@ -7,20 +7,24 @@
 
 import UIKit
 
-let paymentTypes = ["Income", "Utilities", "Groceries", "Other Purchase"]
 
-var moneyEntered : String = ""
 
-var descriptionEntered : String = ""
 
-var selectedPaymentType : String = ""
 
 class NewTransactionViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    let paymentTypes = ["Income", "Utilities", "Groceries", "Other Purchase"]
+
+    var moneyEntered : String = ""
+
+    var descriptionEntered : String = ""
+
+    var selectedPaymentType : String = ""
+
+    let userDefaults = UserDefaults.standard
     
-    let defaults = UserDefaults.standard
+    var transactionList : [Transaction] = []
     
-    var users: [String: String] = [:]
-    
+        
     @IBOutlet weak var paymentPicker: UIPickerView!
     
     @IBOutlet weak var descriptionField: UITextField!
@@ -28,9 +32,33 @@ class NewTransactionViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        userDefaults.set(transactionList, forKey: "Transactions")
+
+        
         
         self.paymentPicker.delegate = self
         self.paymentPicker.dataSource = self
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if let data = UserDefaults.standard.data(forKey: "Transactions") {
+            do {
+                // Create JSON Decoder
+                let decoder = JSONDecoder()
+
+                // Decode Note
+                transactionList = try decoder.decode([Transaction].self, from: data)
+
+            } catch {
+                print("Unable to Decode Note (\(error))")
+            }
+        }
+
+        
+        
+        
+        transactionList = userDefaults.object(forKey: "Transactions") as? [Transaction] ?? []
+        print(transactionList)
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -44,7 +72,6 @@ class NewTransactionViewController: UIViewController, UIPickerViewDelegate, UIPi
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         selectedPaymentType = paymentTypes[row]
         
-        print(paymentTypes[row])
         
         return paymentTypes[row]
         
@@ -53,7 +80,6 @@ class NewTransactionViewController: UIViewController, UIPickerViewDelegate, UIPi
     @IBAction func descriptionFieldChanged(_ sender: Any) {
         descriptionEntered = descriptionField.text!
         
-        print(descriptionField.text!)
     }
     @IBAction func moneyFieldChanged(_ sender: Any) {
         
@@ -71,6 +97,59 @@ class NewTransactionViewController: UIViewController, UIPickerViewDelegate, UIPi
     @IBAction func saveTest(_ sender: Any) {
         // Do after save is pressed
         
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let segueIdentifier : String = segue.identifier!
+        
+        var category : Transaction.Category = .Groceries
+        
+        if selectedPaymentType == "Income"
+        {
+            category = .Income
+        }
+        else if selectedPaymentType == "Utilities"
+        {
+            category = .Utilities
+        }
+        
+        if segueIdentifier == "save"
+        {
+            let currentTransaction = Transaction(amount: moneyEntered, date: returnCurrentDate(), description: descriptionEntered, category: category)
+            
+            transactionList.append(currentTransaction)
+            
+            do {
+                // Create JSON Encoder
+                let encoder = JSONEncoder()
+
+                // Encode Note
+                let data = try encoder.encode(transactionList)
+
+                // Write/Set Data
+                UserDefaults.standard.set(data, forKey: "Transactions")
+                
+                print("saved")
+
+            } catch {
+                print("Unable to Encode Note (\(error))")
+            }
+            
+            
+            
+        }
+        else if segueIdentifier == "cancel"
+        {
+            print("canceled")
+        }
+    }
+    func returnCurrentDate() -> String {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+         
+        dateFormatter.dateFormat = "MM/dd/yyyy"
+         
+        let result = dateFormatter.string(from: date)
+        return result
     }
     
     
@@ -103,5 +182,6 @@ extension String {
         
         return formatter.string(from: number)!
     }
+    
 }
 

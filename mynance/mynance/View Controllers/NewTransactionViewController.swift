@@ -32,9 +32,6 @@ class NewTransactionViewController: UIViewController, UIPickerViewDelegate, UIPi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userDefaults.set(transactionList, forKey: "Transactions")
-
-        
         
         self.paymentPicker.delegate = self
         self.paymentPicker.dataSource = self
@@ -42,23 +39,20 @@ class NewTransactionViewController: UIViewController, UIPickerViewDelegate, UIPi
     override func viewDidAppear(_ animated: Bool) {
         
         if let data = UserDefaults.standard.data(forKey: "Transactions") {
-            do {
-                // Create JSON Decoder
-                let decoder = JSONDecoder()
-
-                // Decode Note
-                transactionList = try decoder.decode([Transaction].self, from: data)
-
-            } catch {
-                print("Unable to Decode Note (\(error))")
-            }
+            let acct = try! JSONDecoder().decode([Transaction].self, from: data)
+            transactionList = acct
         }
+        else
+        {
+            let trs : [Transaction] = []
+            userDefaults.set(trs, forKey: "Transactions")
 
+        }
         
-        
-        
-        transactionList = userDefaults.object(forKey: "Transactions") as? [Transaction] ?? []
-        print(transactionList)
+
+        print("Transaction Count: \(transactionList.count)")
+
+//        transactionList = userDefaults.object(forKey: "Transactions") as? [Transaction] ?? []
     }
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -117,6 +111,7 @@ class NewTransactionViewController: UIViewController, UIPickerViewDelegate, UIPi
             let currentTransaction = Transaction(amount: moneyEntered, date: returnCurrentDate(), description: descriptionEntered, category: category)
             
             transactionList.append(currentTransaction)
+            print("\nPost-Append: \(transactionList)\n")
             
             do {
                 // Create JSON Encoder
@@ -127,8 +122,7 @@ class NewTransactionViewController: UIViewController, UIPickerViewDelegate, UIPi
 
                 // Write/Set Data
                 UserDefaults.standard.set(data, forKey: "Transactions")
-                
-                print("saved")
+                print("\n\n\nData Saved: \(data)\n\n\n")
 
             } catch {
                 print("Unable to Encode Note (\(error))")
@@ -151,6 +145,8 @@ class NewTransactionViewController: UIViewController, UIPickerViewDelegate, UIPi
         let result = dateFormatter.string(from: date)
         return result
     }
+    
+    
     
     
 }

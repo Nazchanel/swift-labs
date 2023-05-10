@@ -7,51 +7,68 @@
 
 import UIKit
 
-class TransactionViewController: UIViewController, UITableViewDataSource {
+class TransactionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var tableView: UITableView!
     var transactionList : [Transaction] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        resetUserDefaults()
+        
+        print("View Loaded")
+        
+        print("Initial Transaction List: \(transactionList)")
+        
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
     }
     override func viewDidAppear(_ animated: Bool) {
-        print("View Appeared")
         
-        if let data = UserDefaults.standard.data(forKey: "Transactions") {
-            do {
-                // Create JSON Decoder
-                let decoder = JSONDecoder()
-
-                // Decode Note
-                transactionList = try decoder.decode([Transaction].self, from: data)
-
-            } catch {
-                print("Unable to Decode Note (\(error))")
-            }
-        }
        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        if let data = UserDefaults.standard.data(forKey: "Transactions") {
+            let acct = try! JSONDecoder().decode([Transaction].self, from: data)
+            transactionList = acct
+            
+            print("\n\nRow Count: \(transactionList.count)\n\n\n")
+            return transactionList.count
+        }
+        else{
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Test", for: indexPath)
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionCell", for: indexPath) as? PurchaseTableViewCell
         
-        var content = cell.defaultContentConfiguration()
-        content.text = "test"
-        content.secondaryText = "Test"
-        
-        cell.contentConfiguration = content
-        
-        return cell
-        
+//        cell?.update(transaction: self.transactionList[ibde])
     }
     @IBAction func unwindToMain(segue: UIStoryboardSegue) {
+        tableView.reloadData()
+        if let data = UserDefaults.standard.data(forKey: "Transactions") {
+            let acct = try! JSONDecoder().decode([Transaction].self, from: data)
+            transactionList = acct
+            
+            print("\n\n\nUnwinded Count: \(transactionList.count)\n\n\n")
+        }
+        else{
+            print("unwind failed")
+        }
+        
             
        }
+    func resetUserDefaults() {
+            let defaults = UserDefaults.standard
+            let dictionary = defaults.dictionaryRepresentation()
+            dictionary.keys.forEach{ key in
+                defaults.removeObject(forKey: key)
+            }
+        }
     
     
     

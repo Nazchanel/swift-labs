@@ -55,7 +55,6 @@
 		4AE1330429F831FD006EA8FB = {
 			isa = PBXGroup;
 			children = (
-				4A6331E52A0170AF00FAC940 /* Transaction.swift */,
 				4AE1330F29F831FD006EA8FB /* mynance */,
 				4AE1330E29F831FD006EA8FB /* Products */,
 			);
@@ -72,6 +71,7 @@
 		4AE1330F29F831FD006EA8FB /* mynance */ = {
 			isa = PBXGroup;
 			children = (
+				4A6331E52A0170AF00FAC940 /* Transaction.swift */,
 				4ADA83DC29FADE8E00447A25 /* View Controllers */,
 				4AE1331029F831FD006EA8FB /* AppDelegate.swift */,
 				4AE1331229F831FD006EA8FB /* SceneDelegate.swift */,

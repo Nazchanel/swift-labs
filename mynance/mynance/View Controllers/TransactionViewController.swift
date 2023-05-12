@@ -9,12 +9,14 @@ import UIKit
 
 class TransactionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet var balanceLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    
     var transactionList : [Transaction] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        resetUserDefaults()
+        //        Execute to reset the User Defaults to clear the stored transactions
+        //        resetUserDefaults()
         
         print("View Loaded")
         
@@ -23,10 +25,6 @@ class TransactionViewController: UIViewController, UITableViewDataSource, UITabl
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        
-       
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,7 +44,12 @@ class TransactionViewController: UIViewController, UITableViewDataSource, UITabl
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionCell", for: indexPath) as? PurchaseTableViewCell
         
-//        cell?.update(transaction: self.transactionList[ibde])
+        cell?.update(transaction: self.transactionList[indexPath.row])
+        
+        reloadBalance()
+        
+        
+        return cell!
     }
     @IBAction func unwindToMain(segue: UIStoryboardSegue) {
         tableView.reloadData()
@@ -60,15 +63,43 @@ class TransactionViewController: UIViewController, UITableViewDataSource, UITabl
             print("unwind failed")
         }
         
-            
-       }
+        
+    }
     func resetUserDefaults() {
-            let defaults = UserDefaults.standard
-            let dictionary = defaults.dictionaryRepresentation()
-            dictionary.keys.forEach{ key in
-                defaults.removeObject(forKey: key)
-            }
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach{ key in
+            defaults.removeObject(forKey: key)
         }
+    }
+    func reloadBalance(){
+        var totalBalance : Double = 0
+        for i in transactionList
+        {
+            let transactionType = i.category.description
+            
+            if transactionType == "Income"{
+                totalBalance += Double(i.amount)!
+            }
+            else
+            {
+                totalBalance -= Double(i.amount)!
+            }
+            
+        }
+        
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .currency
+        // localize to your grouping and decimal separator
+        currencyFormatter.locale = Locale.current
+        
+        // We'll force unwrap with the !, if you've got defined data you may need more error checking
+        
+        let priceString = currencyFormatter.string(from: NSNumber(value: totalBalance))!
+        
+        balanceLabel.text = priceString
+    }
     
     
     

@@ -43,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A855FEB2A0EA28B0051C50A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4A6331E52A0170AF00FAC940 /* Transaction.swift */,
+				4A33023829FC352C00360B20 /* PurchaseTableViewCell.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		4ADA83DC29FADE8E00447A25 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -71,7 +80,7 @@
 		4AE1330F29F831FD006EA8FB /* mynance */ = {
 			isa = PBXGroup;
 			children = (
-				4A6331E52A0170AF00FAC940 /* Transaction.swift */,
+				4A855FEB2A0EA28B0051C50A /* Classes */,
 				4ADA83DC29FADE8E00447A25 /* View Controllers */,
 				4AE1331029F831FD006EA8FB /* AppDelegate.swift */,
 				4AE1331229F831FD006EA8FB /* SceneDelegate.swift */,
@@ -79,7 +88,6 @@
 				4AE1331929F831FF006EA8FB /* Assets.xcassets */,
 				4AE1331B29F831FF006EA8FB /* LaunchScreen.storyboard */,
 				4AE1331E29F831FF006EA8FB /* Info.plist */,
-				4A33023829FC352C00360B20 /* PurchaseTableViewCell.swift */,
 			);
 			path = mynance;
 			sourceTree = "<group>";

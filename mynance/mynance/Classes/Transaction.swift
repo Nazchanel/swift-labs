@@ -24,7 +24,7 @@ struct Transaction : Codable {
         
         var imageName : String {
             switch self {
-            case .Groceries : return "car.fill"
+            case .Groceries : return "cart.fill"
             case .Income : return "dollarsign.circle.fill"
             case .Utilities : return "bolt.fill"
             }

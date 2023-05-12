@@ -36,12 +36,26 @@ class PurchaseTableViewCell: UITableViewCell {
         self.transDescription.text = transaction.description
         self.transType.text = transaction.category.description
         self.date.text = transaction.date
-        self.amount.text = transaction.amount
+        
+        let amount = Double(transaction.amount)!
+        
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .currency
+        // localize to your grouping and decimal separator
+        currencyFormatter.locale = Locale.current
+
+        // We'll force unwrap with the !, if you've got defined data you may need more error checking
+
+        let priceString = currencyFormatter.string(from: NSNumber(value: amount))!
+        
+        self.amount.text = priceString
     }
     private func configureImage(transaction : Transaction)
     {
         self.img.image = UIImage(systemName: transaction.category.imageName)
     }
+    
     
 
 }
